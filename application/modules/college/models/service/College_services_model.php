@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Category_services_model extends CI_Model
+class College_services_model extends CI_Model
 {
     public $ID;
     public $Table;
