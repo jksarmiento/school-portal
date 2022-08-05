@@ -1,0 +1,20 @@
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    [class^="print-ignore-"] {
+        visibility: hidden;
+        display: none;
+    }
+
+    #section_to_print, #section_to_print * {
+        visibility: visible;
+    }
+
+    #section_to_print {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
