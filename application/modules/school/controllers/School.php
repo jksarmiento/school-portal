@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Category extends MY_Controller
+class School extends MY_Controller
 {
 	private $data = [];
 	protected $session;
@@ -15,7 +15,7 @@ class Category extends MY_Controller
 		// }
 
 		$model_list = [
-			'category/Category_model' => 'cModel',
+			'school/School_model' => 'sModel',
 		];
 		$this->load->model($model_list);
 	}
@@ -23,7 +23,7 @@ class Category extends MY_Controller
 	/** load main page */
 	public function index()
 	{
-		$this->data['details'] = $this->cModel->get_categories();
+		$this->data['details'] = $this->sModel->get_categories();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
@@ -33,7 +33,7 @@ class Category extends MY_Controller
 		$ID = $this->uri->segment(3);
 		$this->cModel->ID = $ID;
 
-		$this->data['details'] = $this->cModel->contact_profile();
+		$this->data['details'] = $this->sModel->contact_profile();
 		$this->data['content'] = 'category_profile';
 		$this->load->view('layout',$this->data);
 	}
