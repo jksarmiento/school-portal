@@ -105,15 +105,6 @@ function main_header($sidebar = [])
                     <span class="nav-text"> School </span>
                   </a>
                 </li>
-              <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
-                  <a href="<?= base_url() ?>department">
-                    <span class="nav-icon">
-                      <i class="fa fa-book">
-                      </i>
-                    </span>
-                    <span class="nav-text"> Department </span>
-                  </a>
-                </li>
               <li class='<?= (sidebar($sidebar, ['college'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>college">
                     <span class="nav-icon">
@@ -121,6 +112,15 @@ function main_header($sidebar = [])
                       </i>
                     </span>
                     <span class="nav-text"> College </span>
+                  </a>
+                </li>
+              <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>department">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Department </span>
                   </a>
                 </li>
               <li class='<?= (sidebar($sidebar, ['course'])) ? 'active' : '' ?>'>
