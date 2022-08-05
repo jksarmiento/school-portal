@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Category_service extends MY_Controller
+class Subject_service extends MY_Controller
 {
 	private $data = [];
 	protected $session;

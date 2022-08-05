@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Category_service extends MY_Controller
+class Course_service extends MY_Controller
 {
 	private $data = [];
 	protected $session;
@@ -15,7 +15,7 @@ class Category_service extends MY_Controller
 		// }
 
 		$model_list = [
-			'category/service/Category_services_model' => 'csModel',
+			'course/service/Course_services_model' => 'csModel',
 		];
 		$this->load->model($model_list);
 	}

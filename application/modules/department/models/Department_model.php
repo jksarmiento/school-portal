@@ -1,6 +1,6 @@
-<?php
+D<?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Category_model extends CI_Model
+class Department_model extends CI_Model
 {
     public $Table;
     public function __construct()
