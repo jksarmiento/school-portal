@@ -91,6 +91,56 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Categories </span>
                   </a>
                 </li>
+
+                <li class="nav-header hidden-folded">
+                  <small class="text-muted">ADMIN</small>
+                </li>
+
+              <li class='<?= (sidebar($sidebar, ['school'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>school">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> School </span>
+                  </a>
+                </li>
+              <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>department">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Department </span>
+                  </a>
+                </li>
+              <li class='<?= (sidebar($sidebar, ['college'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>college">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> College </span>
+                  </a>
+                </li>
+              <li class='<?= (sidebar($sidebar, ['course'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>course">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Course </span>
+                  </a>
+                </li>
+              <li class='<?= (sidebar($sidebar, ['subject'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>subject">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Subject </span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
