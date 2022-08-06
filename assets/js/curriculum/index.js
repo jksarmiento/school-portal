@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $(document).on('click', '#term_save', function () {
+    $(document).on('click', '#curriculum_save', function () {
             $.confirm({
                 containerFluid: true,
                 columnClass: 'col-md-5 offset-md-4',
                 title: '',
-                content: 'Save Term?',
+                content: 'Save To Curriculum?',
                 theme: 'modern',
                 closeIcon: true,
                 animation: 'scale',
@@ -19,11 +19,14 @@ $(document).ready(function () {
                         ],
                         action: function () {
                             $(document).gmPostHandler({
-                                url: 'term/service/Term_service/term_save',
+                                url: 'curriculum/service/Curriculum_service/curriculum_save',
                                 selector: '.form-control',
                                 data: {
+                                    CourseID: $('#course').val(),
                                     AYID: $('#ay').val(),
+                                    Year_level: $('#year_level').val(),
                                     Term: $('#term').val(),
+                                    SubjectID: $('#subject').val(),
                                 },
                                 field: 'field',
                                 function_call: true,

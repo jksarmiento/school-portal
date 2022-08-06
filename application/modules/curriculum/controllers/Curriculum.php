@@ -23,6 +23,9 @@ class Curriculum extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['course'] = $this->cModel->get_courses();
+		$this->data['ay'] = $this->cModel->get_ay();
+		$this->data['subject'] = $this->cModel->get_subjects();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);

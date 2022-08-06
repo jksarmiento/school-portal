@@ -20,11 +20,14 @@ class Curriculum_service extends MY_Controller
 		$this->load->model($model_list);
 	}
 
-	public function ay_save() {
-		$this->csModel->Start_year = $this->input->post("Start_year");
-		$this->csModel->End_year = $this->input->post("End_year");
+	public function curriculum_save() {
+		$this->csModel->CourseID = $this->input->post("CourseID");
+		$this->csModel->AYID = $this->input->post("AYID");
+		$this->csModel->Year_level = $this->input->post("Year_level");
+		$this->csModel->Term = $this->input->post("Term");
+		$this->csModel->SubjectID = $this->input->post("SubjectID");
 
-		$response = $this->csModel->ay_save();
+		$response = $this->csModel->curriculum_save();
 		echo json_encode($response);
 	}
 }

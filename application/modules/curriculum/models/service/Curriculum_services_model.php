@@ -19,30 +19,52 @@ class Curriculum_services_model extends CI_Model
         $this->Table = json_decode(TABLE);
     }
 
-    public function ay_save() {
+    public function curriculum_save() {
         try {
-            if(empty($this->Start_year) || empty($this->End_year)) {
+            if(empty($this->CourseID) || 
+               empty($this->AYID) ||
+               empty($this->Year_level) ||
+               empty($this->Term) ||
+               empty($this->SubjectID)) {
                 throw new Exception(MISSING_DETAILS, true);
             }
 
-            $this->db->select('*');
-            $this->db->from($this->Table->ay);
-            $this->db->where('Start_year', $this->Start_year);
+            // $this->db->select('*');
+            // $this->db->from($this->Table->ay);
+            // $this->db->where('Start_year', $this->Start_year);
 
-            $query = $this->db->get()->result();
-            if (!empty($query)) {
-                return (array('message'=>DUPLICATE_RECORD, 'has_error'=>true));
-            }
+            // $query = $this->db->get()->result();
+            // if (!empty($query)) {
+            //     return (array('message'=>DUPLICATE_RECORD, 'has_error'=>true));
+            // }
+
+            $this->db->select('Course_code');
+            $this->db->from($this->Table->course);
+            $this->db->where('ID', $this->CourseID);
+
+            $course_query = $this->db->get()->row();
+
+            $this->db->select('Start_year, End_year');
+            $this->db->from($this->Table->ay);
+            $this->db->where('ID', $this->AYID);
+
+            $ay_query = $this->db->get()->row();
+
+            $curr_name = $course_query->Course_code . $ay_query->Start_year . $ay_query->End_year;
 
             $data = array(
-                'Start_year' => $this->Start_year,
-                'End_year' => $this->End_year,
+                'Curriculum_name' => $curr_name,
+                'CourseID' => $this->CourseID,
+                'AYID' => $this->AYID,
+                'Year_level' => $this->Year_level,
+                'Term' => $this->Term,
+                'SubjectID' => $this->SubjectID,
                 'Date_created' => date('Y-m-d H:i:s'),
             );
 
             $this->db->trans_start();
             
-            $this->db->insert($this->Table->ay, $data);
+            $this->db->insert($this->Table->curriculum, $data);
 
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {

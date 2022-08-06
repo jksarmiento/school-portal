@@ -16,4 +16,29 @@ class Curriculum_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function get_courses() {
+        $this->db->select('*');
+        $this->db->from($this->Table->course);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_ay() {
+        $this->db->select('*');
+        $this->db->from($this->Table->ay);
+        $this->db->order_by('Start_year', 'ASC');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_subjects() {
+        $this->db->select('*');
+        $this->db->from($this->Table->subject);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }

@@ -19,15 +19,57 @@ main_header(['curriculum']);
 						<h2>Add To Curriculum</h2>
 						<form>
 							<div class="form-group">
-								<label for="start_year">Start Year</label>
-								<input type="number" class="form-control" id="start_year" min="1900" max="2099" step="1" value="2022" placeholder="Enter Start Year"/>
+								<label for="course">Course</label>
+								<select class="form-control" id="course">
+									<?php
+									if (!empty($course)) {
+										foreach ($course as $key => $value) {
+										?>
+											<option value="<?=$value->ID?>"><?=$value->Course_name?></option>
+										<?php
+										}
+									}
+									?>
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="select_college">End Year</label>
-								<input type="number" class="form-control" id="end_year" min="1901" max="3000" step="1" value="2023" placeholder="Enter End Year" disabled/>
+								<label for="ay">Annual Year</label>
+								<select class="form-control" id="ay">
+									<?php
+									if (!empty($ay)) {
+										foreach ($ay as $key => $value) {
+										?>
+											<option value="<?=$value->ID?>"><?=$value->Start_year?> - <?=$value->End_year?></option>
+										<?php
+										}
+									}
+									?>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="year_level">Year Level</label>
+								<input type="number" class="form-control" id="year_level" min="1" max="5" step="1" value="1" placeholder="Enter Year Level"/>
+							</div>
+							<div class="form-group">
+								<label for="term">Term</label>
+								<input type="number" class="form-control" id="term" min="1" max="3" step="1" value="1" placeholder="Enter Term"/>
+							</div>
+							<div class="form-group">
+								<label for="subject">Subject</label>
+								<select class="form-control" id="subject">
+									<?php
+									if (!empty($subject)) {
+										foreach ($subject as $key => $value) {
+										?>
+											<option value="<?=$value->ID?>"><?=$value->Subject_code?> - <?=$value->Subject_name?></option>
+										<?php
+										}
+									}
+									?>
+								</select>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="ay_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="curriculum_save">Submit</button>
 					</div>
 				</div>
 			</div>
@@ -38,4 +80,4 @@ main_header(['curriculum']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/curricuulm/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/curriculum/index.js"></script>
