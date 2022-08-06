@@ -19,4 +19,12 @@ class College_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function save(){
+		$this->csModel->College = $this->input->post("College");
+		$this->csModel->SchoolID = $this->input->post("SchoolID");
+
+		$response = $this->csModel->save();
+		echo json_encode($response);
+	}
 }

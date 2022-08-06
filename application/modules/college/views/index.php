@@ -19,8 +19,8 @@ main_header(['college']);
 						<h2>Add College</h2>
 						<form>
 							<div class="form-group">
-								<label for="college_name">College Name</label>
-								<input type="text" class="form-control" id="college_name" placeholder="Enter College Name">
+								<label for="College">College Name</label>
+								<input type="text" class="form-control" id="College" placeholder="Enter College Name">
 								<br>
 								<label for="select_school">School</label>
 								<select class="form-control" id="select_school"></select>

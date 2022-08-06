@@ -27,4 +27,10 @@ class College extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function get_school(){
+		$this->data['details'] = $this->cModel->get_school();
+		$this->data['content'] = 'grid/select_school';
+		$this->load->view('layout',$this->data);
+	}
 }
