@@ -27,4 +27,10 @@ class Course extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function get_department(){
+		$this->data['details'] = $this->cModel->get_department();
+		$this->data['content'] = 'grid/select_department';
+		$this->load->view('layout',$this->data);
+	}
 }

@@ -16,4 +16,12 @@ class Course_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function get_department(){
+        $this->db->select('*');
+        $this->db->from($this->Table->department);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }
