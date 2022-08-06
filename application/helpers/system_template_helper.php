@@ -141,6 +141,24 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Subject </span>
                   </a>
                 </li>
+                <li class='<?= (sidebar($sidebar, ['annual_year'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>annual_year">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Annual Year </span>
+                  </a>
+                </li>
+                <li class='<?= (sidebar($sidebar, ['term'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>term">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Term </span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
