@@ -48,12 +48,16 @@ define('MB', 1048576);
 //     'sales' =>  'tblsales'
 // ]);
 $array = array(
-    'categories' =>  'tblcategory',
-    'products' => 'tblproduct',
-    'suppliers' => 'tblsupplier',
-    'inventory' => 'tblinventory',
-    'customers' => 'tblcustomer',
-    'purchases' => 'tblpurchase',
-    'invoices' => 'tblinvoice'
+    'students' =>  'tblstudents',
+    'studeducstatus' => 'tblstudeducstatus',
+    'school' => 'tblschool',
+    'college' => 'tblcollege',
+    'department' => 'tbldepartment',
+    'course' => 'tblcourse',
+    'subject' => 'tblsubject',
+    'ay' => 'tblay',
+    'term' => 'tblayterm',
+    'curriculum' => 'tblcurriculum',
+    'studcurr' => 'tblstudcurr',
 );
 define('TABLE', json_encode($array));
