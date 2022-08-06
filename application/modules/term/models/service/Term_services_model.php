@@ -25,6 +25,16 @@ class Term_services_model extends CI_Model
                 throw new Exception(MISSING_DETAILS, true);
             }
 
+            $this->db->select('*');
+            $this->db->from($this->Table->term);
+            $this->db->where('AYID', $this->AYID);
+            $this->db->where('Term', $this->Term);
+
+            $query = $this->db->get()->result();
+            if (!empty($query)) {
+                return (array('message'=>DUPLICATE_RECORD, 'has_error'=>true));
+            }
+
             $data = array(
                 'AYID' => $this->AYID,
                 'Term' => $this->Term,

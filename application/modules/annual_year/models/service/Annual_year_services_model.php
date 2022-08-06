@@ -25,6 +25,15 @@ class Annual_year_services_model extends CI_Model
                 throw new Exception(MISSING_DETAILS, true);
             }
 
+            $this->db->select('*');
+            $this->db->from($this->Table->ay);
+            $this->db->where('Start_year', $this->Start_year);
+
+            $query = $this->db->get()->result();
+            if (!empty($query)) {
+                return (array('message'=>DUPLICATE_RECORD, 'has_error'=>true));
+            }
+
             $data = array(
                 'Start_year' => $this->Start_year,
                 'End_year' => $this->End_year,
