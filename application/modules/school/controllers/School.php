@@ -23,18 +23,8 @@ class School extends MY_Controller
 	/** load main page */
 	public function index()
 	{
-		$this->data['details'] = $this->sModel->get_categories();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
-	}
-
-	public function contact_profile() {
-		$ID = $this->uri->segment(3);
-		$this->cModel->ID = $ID;
-
-		$this->data['details'] = $this->sModel->contact_profile();
-		$this->data['content'] = 'category_profile';
-		$this->load->view('layout',$this->data);
 	}
 }

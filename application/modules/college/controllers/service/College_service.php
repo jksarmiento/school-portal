@@ -19,34 +19,4 @@ class College_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
-
-	public function category_save() {
-		$this->csModel->Category_name = $this->input->post("Category_name");
-
-		$response = $this->csModel->category_save();
-		echo json_encode($response);
-	}
-
-	public function category_delete() {
-		$this->csModel->ID = $this->input->post("ID");
-
-		$response = $this->csModel->category_delete();
-		echo json_encode($response);
-	}
-
-	public function category_update() {
-		$this->csModel->ID = $this->input->post("ID");
-		$this->csModel->Category_name = $this->input->post("Category_name");
-
-		$response = $this->csModel->category_update();
-		echo json_encode($response);
-	}
-
-	public function category_search() {
-		$this->csModel->Search_text = $this->input->post("Search_text");
-
-		$this->data['details'] = $this->csModel->category_search();
-		$this->data['content'] = 'grid/load_category';
-		$this->load->view('layout',$this->data);
-	}
 }

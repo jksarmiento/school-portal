@@ -16,21 +16,4 @@ class Subject_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
-
-    public function get_categories() {
-        $this->db->select('*');
-        $this->db->from($this->Table->categories);
-
-        $query = $this->db->get()->result();
-        return $query;
-    }
-
-    public function contact_profile() {
-        $this->db->select('*');
-        $this->db->from($this->Table->categories);
-        $this->db->where('ID', $this->ID);
-
-        $query = $this->db->get()->row();
-        return $query;
-    }
 }
