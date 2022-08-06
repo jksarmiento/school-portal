@@ -1,5 +1,5 @@
 <?php
-main_header(['ay']);
+main_header(['annual_year']);
 ?>
 <!-- ############ PAGE START-->
 <div class="padding">
@@ -19,14 +19,15 @@ main_header(['ay']);
 						<h2>Add Annual Year</h2>
 						<form>
 							<div class="form-group">
-								<label for="department_name">Start Year</label>
-								<input type="text" class="form-control" id="department_name" placeholder="Enter Department Name">
-								<br>
+								<label for="start_year">Start Year</label>
+								<input type="number" class="form-control" id="start_year" min="1900" max="2099" step="1" value="2022" placeholder="Enter Start Year"/>
+							</div>
+							<div class="form-group">
 								<label for="select_college">End Year</label>
-								<select class="form-control" id="select_college"></select>
+								<input type="number" class="form-control" id="end_year" min="1901" max="3000" step="1" value="2023" placeholder="Enter End Year" disabled/>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="department_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="ay_save">Submit</button>
 					</div>
 				</div>
 			</div>
@@ -37,4 +38,4 @@ main_header(['ay']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/department/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/annual_year/index.js"></script>

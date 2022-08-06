@@ -19,14 +19,15 @@ main_header(['term']);
 						<h2>Add Term</h2>
 						<form>
 							<div class="form-group">
-								<label for="department_name">Annual Year</label>
-								<input type="text" class="form-control" id="department_name" placeholder="Enter Department Name">
-								<br>
-								<label for="select_college">Term</label>
-								<select class="form-control" id="select_college"></select>
+								<label for="ay">Annual Year</label>
+								<select class="form-control" id="ay"></select>
+							</div>
+							<div class="form-group">
+								<label for="term">Term</label>
+								<input type="number" class="form-control" id="term" min="1" max="3" step="1" value="1" placeholder="Enter Term Number"/>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="department_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="term_save">Submit</button>
 					</div>
 				</div>
 			</div>
@@ -37,4 +38,4 @@ main_header(['term']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/department/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/term/index.js"></script>

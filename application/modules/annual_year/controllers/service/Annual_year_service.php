@@ -19,4 +19,12 @@ class Annual_year_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function ay_save() {
+		$this->aysModel->Start_year = $this->input->post("Start_year");
+		$this->aysModel->End_year = $this->input->post("End_year");
+
+		$response = $this->aysModel->ay_save();
+		echo json_encode($response);
+	}
 }

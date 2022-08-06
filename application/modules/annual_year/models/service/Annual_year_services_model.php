@@ -18,4 +18,35 @@ class Annual_year_services_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function ay_save() {
+        try {
+            if(empty($this->Start_year) || empty($this->End_year)) {
+                throw new Exception(MISSING_DETAILS, true);
+            }
+
+            $data = array(
+                'Start_year' => $this->Start_year,
+                'End_year' => $this->End_year,
+                'Date_created' => date('Y-m-d H:i:s'),
+            );
+
+            $this->db->trans_start();
+            
+            $this->db->insert($this->Table->ay, $data);
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);
+            }
+            else {
+                $this->db->trans_commit();
+                return array('message'=>SAVED_SUCCESSFUL, 'has_error'=>false);
+            }
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
 }
