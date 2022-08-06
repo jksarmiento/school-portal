@@ -1,4 +1,4 @@
-D<?php
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 class Department_model extends CI_Model
 {
@@ -15,22 +15,5 @@ class Department_model extends CI_Model
         $model_list = [];
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
-    }
-
-    public function get_categories() {
-        $this->db->select('*');
-        $this->db->from($this->Table->categories);
-
-        $query = $this->db->get()->result();
-        return $query;
-    }
-
-    public function contact_profile() {
-        $this->db->select('*');
-        $this->db->from($this->Table->categories);
-        $this->db->where('ID', $this->ID);
-
-        $query = $this->db->get()->row();
-        return $query;
     }
 }

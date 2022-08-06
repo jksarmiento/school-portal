@@ -96,7 +96,7 @@ function main_header($sidebar = [])
                   <small class="text-muted">ADMIN</small>
                 </li>
 
-              <li class='<?= (sidebar($sidebar, ['school'])) ? 'active' : '' ?>'>
+                <li class='<?= (sidebar($sidebar, ['school'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>school">
                     <span class="nav-icon">
                       <i class="fa fa-book">
@@ -105,7 +105,7 @@ function main_header($sidebar = [])
                     <span class="nav-text"> School </span>
                   </a>
                 </li>
-              <li class='<?= (sidebar($sidebar, ['college'])) ? 'active' : '' ?>'>
+                <li class='<?= (sidebar($sidebar, ['college'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>college">
                     <span class="nav-icon">
                       <i class="fa fa-book">
@@ -114,7 +114,7 @@ function main_header($sidebar = [])
                     <span class="nav-text"> College </span>
                   </a>
                 </li>
-              <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
+                <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>department">
                     <span class="nav-icon">
                       <i class="fa fa-book">
@@ -123,7 +123,7 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Department </span>
                   </a>
                 </li>
-              <li class='<?= (sidebar($sidebar, ['course'])) ? 'active' : '' ?>'>
+                <li class='<?= (sidebar($sidebar, ['course'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>course">
                     <span class="nav-icon">
                       <i class="fa fa-book">
@@ -132,7 +132,7 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Course </span>
                   </a>
                 </li>
-              <li class='<?= (sidebar($sidebar, ['subject'])) ? 'active' : '' ?>'>
+                <li class='<?= (sidebar($sidebar, ['subject'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>subject">
                     <span class="nav-icon">
                       <i class="fa fa-book">
