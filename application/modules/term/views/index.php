@@ -20,7 +20,17 @@ main_header(['term']);
 						<form>
 							<div class="form-group">
 								<label for="ay">Annual Year</label>
-								<select class="form-control" id="ay"></select>
+								<select class="form-control" id="ay">
+									<?php
+									if (!empty($ay)) {
+										foreach ($ay as $key => $value) {
+										?>
+											<option value="<?=$value->ID?>"><?=$value->Start_year?> - <?=$value->End_year?></option>
+										<?php
+										}
+									}
+									?>
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="term">Term</label>

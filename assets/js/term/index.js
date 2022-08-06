@@ -3,12 +3,12 @@ $(document).ready(function () {
         $('#end_year').val(parseInt($('#start_year').val()) + 1);
     });
 
-    $(document).on('click', '#ay_save', function () {
+    $(document).on('click', '#term_save', function () {
             $.confirm({
                 containerFluid: true,
                 columnClass: 'col-md-5 offset-md-4',
                 title: '',
-                content: 'Save Annual Year?',
+                content: 'Save Term?',
                 theme: 'modern',
                 closeIcon: true,
                 animation: 'scale',
@@ -23,11 +23,11 @@ $(document).ready(function () {
                         ],
                         action: function () {
                             $(document).gmPostHandler({
-                                url: 'annual_year/service/Annual_year_service/ay_save',
+                                url: 'term/service/Term_service/term_save',
                                 selector: '.form-control',
                                 data: {
-                                    Start_year: $('#start_year').val(),
-                                    End_year: $('#end_year').val(),
+                                    AYID: $('#ay').val(),
+                                    Term: $('#term').val(),
                                 },
                                 field: 'field',
                                 function_call: true,

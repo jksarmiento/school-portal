@@ -19,4 +19,12 @@ class Term_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function term_save() {
+		$this->tsModel->AYID = $this->input->post("AYID");
+		$this->tsModel->Term = $this->input->post("Term");
+
+		$response = $this->tsModel->term_save();
+		echo json_encode($response);
+	}
 }

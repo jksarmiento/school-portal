@@ -23,6 +23,7 @@ class Term extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['ay'] = $this->tModel->get_ay();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);

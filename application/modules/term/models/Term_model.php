@@ -16,4 +16,13 @@ class Term_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function get_ay() {
+        $this->db->select('*');
+        $this->db->from($this->Table->ay);
+        $this->db->order_by('Start_year', 'ASC');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }
