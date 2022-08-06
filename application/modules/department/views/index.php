@@ -19,8 +19,8 @@ main_header(['department']);
 						<h2>Add Department</h2>
 						<form>
 							<div class="form-group">
-								<label for="department_name">Department Name</label>
-								<input type="text" class="form-control" id="department_name" placeholder="Enter Department Name">
+								<label for="Department">Department Name</label>
+								<input type="text" class="form-control" id="Department" placeholder="Enter Department Name">
 								<br>
 								<label for="select_college">College</label>
 								<select class="form-control" id="select_college"></select>

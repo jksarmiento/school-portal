@@ -19,4 +19,12 @@ class Department_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function save(){
+		$this->dsModel->Department = $this->input->post("Department");
+		$this->dsModel->CollegeID = $this->input->post("CollegeID");
+
+		$response = $this->dsModel->save();
+		echo json_encode($response);
+	}
 }

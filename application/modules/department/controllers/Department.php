@@ -27,4 +27,10 @@ class Department extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function get_college(){
+		$this->data['details'] = $this->dModel->get_college();
+		$this->data['content'] = 'grid/select_college';
+		$this->load->view('layout',$this->data);
+	}
 }
