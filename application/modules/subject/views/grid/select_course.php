@@ -2,16 +2,16 @@
     $ci = & get_instance();
     if(!empty($details)){ 
             ?>
-            <option>Select School</option>
+            <option>Select Course</option>
             <?php
             foreach ($details as $key => $value){
                 ?>
-                <option value="<?=@$value->ID?>" <?=@$value->ID == @$college->SchoolID ? "selected" : "" ?>><?=@$value->School?></option>
+                <option value="<?=@$value->ID?>" <?=@$value->ID == @$subject->CourseID ? "selected" : "" ?>><?=@$value->Course_name?></option>
                 <?php
             }    
     }else{
         ?>
-        <option>No School Available</option>
+        <option>No Course Available</option>
         <?php
     }
 ?>

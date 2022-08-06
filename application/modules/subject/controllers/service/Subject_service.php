@@ -15,8 +15,19 @@ class Subject_service extends MY_Controller
 		// }
 
 		$model_list = [
-			'category/service/Category_services_model' => 'csModel',
+			'subject/service/Subject_services_model' => 'ssModel',
 		];
 		$this->load->model($model_list);
+	}
+
+	public function save(){
+		$this->ssModel->CourseID = $this->input->post("CourseID");
+		$this->ssModel->Subject_code = $this->input->post("Subject_code");
+		$this->ssModel->Subject_name = $this->input->post("Subject_name");
+		$this->ssModel->Units = $this->input->post("Units");
+		$this->ssModel->Description = $this->input->post("Description");
+
+		$response = $this->ssModel->save();
+		echo json_encode($response);
 	}
 }

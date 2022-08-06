@@ -18,24 +18,24 @@ main_header(['subject']);
 					<div class="col-sm-4">
 						<h2>Add Subject</h2>
 						<form>
-							<div class="form-group">
+							<div class="form-group"> 	
 								<label for="select_course">Course</label>
 								<select class="form-control" id="select_course"></select>
 								<br>
-								<label for="subject_code">Subject Code</label>
-								<input type="text" class="form-control" id="subject_code" placeholder="Enter Subject Code">
+								<label for="Subject_code">Subject Code</label>
+								<input type="text" class="form-control" id="Subject_code" placeholder="Enter Subject Code">
 								<br>
-								<label for="subject_name">Subject Name</label>
-								<input type="text" class="form-control" id="subject_name" placeholder="Enter Subject Name">
+								<label for="Subject_name">Subject Name</label>
+								<input type="text" class="form-control" id="Subject_name" placeholder="Enter Subject Name">
 								<br>
-								<label>Unit</label>
-								<input type="number" class="form-control" id="Unit" placeholder="Enter Units">
+								<label>Units</label>
+								<input type="number" class="form-control" id="Units" placeholder="Enter Units">
 								<br>
 								<label style="font-size: 17px;">Description
 								<textarea class="form-control" rows="2" cols="25" placeholder="This is the default text" id="Description"></textarea>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="course_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="subject_save">Submit</button>
 					</div>
 				</div> 
 			</div>
@@ -46,4 +46,4 @@ main_header(['subject']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/department/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/subject/index.js"></script>
