@@ -19,16 +19,16 @@ main_header(['school']);
 						<h2>Add School</h2>
 						<form>
 							<div class="form-group">
-								<label for="school_name">School Name</label>
-								<input type="text" class="form-control" id="school_name" placeholder="Enter School Name"> <br>
+								<label for="School">School Name</label>
+								<input type="text" class="form-control" id="School" placeholder="Enter School Name"> <br>
 
-								<label for="cars">Level:</label>
-									<select name="" id="">
-									  <option value="volvo">Pre-School</option>
-									  <option value="saab">Elementary</option>
-									  <option value="mercedes">Junior High</option>
-									  <option value="audi">Senior High</option>
-									  <option value="audi">College</option>
+								<label for="Level">Level:</label>
+									<select name="form-control" id="Level">
+									  <option value="Pre-School">Pre-School</option>
+									  <option value="Elementary">Elementary</option>
+									  <option value="Junior High">Junior High</option>
+									  <option value="Senior High">Senior High</option>
+									  <option value="College">College</option>
 									</select>
 							</div>
 						</form>

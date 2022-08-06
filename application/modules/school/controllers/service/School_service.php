@@ -19,4 +19,12 @@ class School_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function save(){
+		$this->ssModel->School = $this->input->post("School");
+		$this->ssModel->Level = $this->input->post("Level");
+
+		$response = $this->ssModel->save();
+		echo json_encode($response);
+	}
 }
