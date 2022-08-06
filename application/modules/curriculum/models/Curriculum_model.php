@@ -41,4 +41,55 @@ class Curriculum_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_curriculums() {
+        $this->db->select('Curriculum_name');
+        $this->db->from($this->Table->curriculum);
+        $this->db->distinct();
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function contact_terms() {
+        $this->db->select('Year_level, Term');
+        $this->db->distinct();
+        $this->db->from($this->Table->curriculum);
+        $this->db->where('Curriculum_name', $this->curr_name);
+        $this->db->order_by('Year_level', 'ASC');
+        $this->db->order_by('Term', 'ASC');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function contact_curriculum() {
+        $this->db->select('Year_level, Term, SubjectID');
+        $this->db->from($this->Table->curriculum);
+        $this->db->where('Curriculum_name', $this->curr_name);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function contact_subjects() {
+        $this->db->select('Year_level, Term, SubjectID');
+        $this->db->from($this->Table->curriculum);
+        $this->db->where('Curriculum_name', $this->curr_name);
+
+        $curr = $this->db->get()->result();
+
+        $subjects = array();
+        foreach($curr as $key => $value) {
+            $this->db->select('*');
+            $this->db->from($this->Table->subject);
+            $this->db->where('ID', $value->SubjectID);
+
+            $subj = $this->db->get()->row();
+
+            $subjects[$subj->ID] = $subj;
+        }
+
+        return $subjects;
+    }
 }

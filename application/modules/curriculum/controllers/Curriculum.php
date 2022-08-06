@@ -26,8 +26,21 @@ class Curriculum extends MY_Controller
 		$this->data['course'] = $this->cModel->get_courses();
 		$this->data['ay'] = $this->cModel->get_ay();
 		$this->data['subject'] = $this->cModel->get_subjects();
+		$this->data['curriculum'] = $this->cModel->get_curriculums();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
+	}
+
+	public function contact_curriculum() {
+		$curr_name = $this->uri->segment(3);
+		$this->cModel->curr_name = $curr_name;
+
+		$this->data['curr_name'] = $curr_name;
+		$this->data['terms'] = $this->cModel->contact_terms();
+		$this->data['curriculum'] = $this->cModel->contact_curriculum();
+		$this->data['subjects'] = $this->cModel->contact_subjects();
+		$this->data['content'] = 'curriculum_profile';
+		$this->load->view('layout',$this->data);
 	}
 }

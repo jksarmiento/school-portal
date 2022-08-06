@@ -71,6 +71,35 @@ main_header(['curriculum']);
 						</form>
 						<button type="submit" class="btn btn-primary" id="curriculum_save">Submit</button>
 					</div>
+					<div class="col-sm-8">
+						<div class="table-responsive">
+							<table ui-jp="dataTable" class="table table-striped b-t b-b">
+								<thead>
+									<tr>
+										<th style="width:80%">Curriculum</th>
+										<th style="width:20%">Options</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if (!empty($curriculum)) {
+										foreach ($curriculum as $key => $value) {
+										?>
+											<tr>
+												<td><?=$value->Curriculum_name?></td>
+												<td>
+													<a class="btn btn-sm btn-primary" href="<?=base_url()?>curriculum/contact_curriculum/<?=@$value->Curriculum_name?>"><i class="fa fa-pencil"></i></a>
+													<button class="btn btn-danger btn-sm" id="curriculum_delete" data-id="<?=@$value->Curriculum_name?>"><i class="fa fa-trash"></i></button>
+												</td>
+											</tr>
+										<?php
+										}
+									}
+									?>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
