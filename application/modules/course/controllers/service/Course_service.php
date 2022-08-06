@@ -19,4 +19,13 @@ class Course_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function save(){
+		$this->csModel->Course_name = $this->input->post("Course_name");
+		$this->csModel->Course_code = $this->input->post("Course_code");
+		$this->csModel->DeptID = $this->input->post("DeptID");
+
+		$response = $this->csModel->save();
+		echo json_encode($response);
+	}
 }

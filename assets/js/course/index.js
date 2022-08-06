@@ -11,12 +11,12 @@ var load_department = () => {
 
 load_department();
 $(document).ready(function () {
-    $(document).on('click', '#college_save', function () {
+    $(document).on('click', '#course_save', function () {
             $.confirm({
                 containerFluid: true,
                 columnClass: 'col-md-5 offset-md-4',
                 title: '',
-                content: 'Save School Name?',
+                content: 'Save Course?',
                 theme: 'modern',
                 closeIcon: true,
                 animation: 'scale',
@@ -31,11 +31,12 @@ $(document).ready(function () {
                         ],
                         action: function () {
                             $(document).gmPostHandler({
-                                url: 'college/service/College_service/save',
+                                url: 'course/service/Course_service/save',
                                 selector: '.form-control',
                                 data: {
-                                    College: $('#College').val(),
-                                    SchoolID: $('#select_school').val(),
+                                    Course_name: $('#Course_name').val(),
+                                    Course_code: $('#Course_code').val(),
+                                    DeptID: $('#select_department').val(),
                                 },
                                 field: 'field',
                                 function_call: true,

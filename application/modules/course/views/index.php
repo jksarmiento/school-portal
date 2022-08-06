@@ -19,8 +19,11 @@ main_header(['course']);
 						<h2>Add Course</h2>
 						<form>
 							<div class="form-group">
-								<label for="course_name">Course Name</label>
-								<input type="text" class="form-control" id="course_name" placeholder="Enter Course Name">
+								<label for="Course_name">Course Name</label>
+								<input type="text" class="form-control" id="Course_name" placeholder="Enter Course Name">
+								<br>
+								<label for="Course_code">Course Code</label>
+								<input type="text" class="form-control" id="Course_code" placeholder="Enter Course Code">
 								<br>
 								<label for="select_department">Department</label>
 								<select class="form-control" id="select_department"></select>
