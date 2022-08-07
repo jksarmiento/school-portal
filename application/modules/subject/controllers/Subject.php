@@ -27,10 +27,4 @@ class Subject extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
-
-	public function get_course(){
-		$this->data['details'] = $this->sModel->get_course();
-		$this->data['content'] = 'grid/select_course';
-		$this->load->view('layout',$this->data);
-	}
 }

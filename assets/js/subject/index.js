@@ -1,15 +1,6 @@
 $(document).ready(function () {
 });
 
-var load_course = () => {
-    var sub_ID = $('#ID').val();
-    $(document).gmLoadPage({
-       url: baseUrl + 'subject/get_course?ID=' + sub_ID,
-       load_on: '#select_course'
-   });
-}
-
-load_course();
 $(document).ready(function () {
     $(document).on('click', '#subject_save', function () {
             $.confirm({
@@ -34,7 +25,6 @@ $(document).ready(function () {
                                 url: 'subject/service/Subject_service/save',
                                 selector: '.form-control',
                                 data: {
-                                    CourseID: $('#select_course').val(),
                                     Subject_code: $('#Subject_code').val(),
                                     Subject_name: $('#Subject_name').val(),
                                     Units: $('#Units').val(),

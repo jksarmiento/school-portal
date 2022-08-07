@@ -23,7 +23,7 @@ main_header(['school']);
 								<input type="text" class="form-control" id="School" placeholder="Enter School Name"> <br>
 
 								<label for="Level">Level:</label>
-									<select name="form-control" id="Level">
+									<select class="form-control" id="Level">
 									  <option value="Pre-School">Pre-School</option>
 									  <option value="Elementary">Elementary</option>
 									  <option value="Junior High">Junior High</option>

@@ -19,9 +19,6 @@ main_header(['subject']);
 						<h2>Add Subject</h2>
 						<form>
 							<div class="form-group"> 	
-								<label for="select_course">Course</label>
-								<select class="form-control" id="select_course"></select>
-								<br>
 								<label for="Subject_code">Subject Code</label>
 								<input type="text" class="form-control" id="Subject_code" placeholder="Enter Subject Code">
 								<br>

@@ -31,7 +31,6 @@ class Subject_services_model extends CI_Model
             }       
             
             $data = array(
-                'CourseID' => $this->CourseID,
                 'Subject_code' => $this->Subject_code,
                 'Subject_name' => $this->Subject_name,
                 'Units' => $this->Units,
