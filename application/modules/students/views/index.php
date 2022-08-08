@@ -19,10 +19,14 @@ main_header(['students']);
 						<!-- <h2>Add Category</h2> -->
 						<form>
 							<div class="form-group">
-								<select id="" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
+								<!-- FOR FUTURE USE OF THE STUDENTS ID DROP FUNCTION --!>
+								<!-- <select id="" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<option value=""> -- School ID -- </option>
-								</select>
+								</select> -->
 								
+								<label for="SchoolID">School ID</label>
+								<input type="number" class="form-control" id="SchoolID" placeholder="Enter SchoolID">
+
 								<label for="Fname">First Name</label>
 								<input type="text" class="form-control" id="Fname" placeholder="Enter First Name">
 
@@ -41,16 +45,15 @@ main_header(['students']);
 								<label for="City">City</label>
 								<input type="text" class="form-control" id="City" placeholder="Enter City">
 
-								<label for="Province">Provice</label>
+								<label for="Province">Province</label>
 								<input type="text" class="form-control" id="Province" placeholder="Enter Province">
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="category_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="students_save">Submit</button>
 					</div>
 					<div class="col-sm-8">
 						<div class="row">
 							<div class="col-sm-9">
-								<h5>List of Categories</h5>
 							</div>
 							<!-- <div class="col-sm-3">
 								<div class="input-group">
@@ -61,7 +64,7 @@ main_header(['students']);
 								</div>
 							</div> -->
 						</div>
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-sm-12">
 								<div class="table-responsive">
 									<table class="table table-striped" ui-jp="dataTable">
@@ -113,7 +116,7 @@ main_header(['students']);
 									</table>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -124,4 +127,4 @@ main_header(['students']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/category/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/students/index.js"></script>

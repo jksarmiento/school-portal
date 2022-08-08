@@ -23,14 +23,15 @@ class College extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['school'] = $this->cModel->get_school();
+		$this->data['college'] = $this->cModel->get_college();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
 
-	public function get_school(){
-		$this->data['details'] = $this->cModel->get_school();
-		$this->data['content'] = 'grid/select_school';
-		$this->load->view('layout',$this->data);
-	}
+	// public function get_school(){
+	// 	$this->data['content'] = 'grid/select_school';
+	// 	$this->load->view('layout',$this->data);
+	// }
 }
