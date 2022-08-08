@@ -43,7 +43,7 @@ class Curriculum_model extends CI_Model
     }
 
     public function get_curriculums() {
-        $this->db->select('Curriculum_name');
+        $this->db->select('*');
         $this->db->from($this->Table->curriculum);
         $this->db->distinct();
 
@@ -51,11 +51,20 @@ class Curriculum_model extends CI_Model
         return $query;
     }
 
+    public function get_curriculum() {
+        $this->db->select('Curriculum_name');
+        $this->db->from($this->Table->curriculum);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();
+        return $query;
+    }
+
     public function contact_terms() {
         $this->db->select('Year_level, Term');
         $this->db->distinct();
-        $this->db->from($this->Table->curriculum);
-        $this->db->where('Curriculum_name', $this->curr_name);
+        $this->db->from($this->Table->currsubj);
+        $this->db->where('CurriculumID', $this->ID);
         $this->db->order_by('Year_level', 'ASC');
         $this->db->order_by('Term', 'ASC');
 
@@ -65,8 +74,8 @@ class Curriculum_model extends CI_Model
 
     public function contact_curriculum() {
         $this->db->select('Year_level, Term, SubjectID');
-        $this->db->from($this->Table->curriculum);
-        $this->db->where('Curriculum_name', $this->curr_name);
+        $this->db->from($this->Table->currsubj);
+        $this->db->where('CurriculumID', $this->ID);
 
         $query = $this->db->get()->result();
         return $query;
@@ -74,8 +83,8 @@ class Curriculum_model extends CI_Model
 
     public function contact_subjects() {
         $this->db->select('Year_level, Term, SubjectID');
-        $this->db->from($this->Table->curriculum);
-        $this->db->where('Curriculum_name', $this->curr_name);
+        $this->db->from($this->Table->currsubj);
+        $this->db->where('CurriculumID', $this->ID);
 
         $curr = $this->db->get()->result();
 

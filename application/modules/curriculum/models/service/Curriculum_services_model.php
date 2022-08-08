@@ -22,10 +22,7 @@ class Curriculum_services_model extends CI_Model
     public function curriculum_save() {
         try {
             if(empty($this->CourseID) || 
-               empty($this->AYID) ||
-               empty($this->Year_level) ||
-               empty($this->Term) ||
-               empty($this->SubjectID)) {
+               empty($this->AYID)) {
                 throw new Exception(MISSING_DETAILS, true);
             }
 
@@ -56,6 +53,48 @@ class Curriculum_services_model extends CI_Model
                 'Curriculum_name' => $curr_name,
                 'CourseID' => $this->CourseID,
                 'AYID' => $this->AYID,
+                'Date_created' => date('Y-m-d H:i:s'),
+            );
+
+            $this->db->trans_start();
+            
+            $this->db->insert($this->Table->curriculum, $data);
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);
+            }
+            else {
+                $this->db->trans_commit();
+                return array('message'=>SAVED_SUCCESSFUL, 'has_error'=>false);
+            }
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
+
+    public function curr_subj_save() {
+        try {
+            if(empty($this->CurriculumID) ||
+               empty($this->Year_level) || 
+               empty($this->Term) ||
+               empty($this->SubjectID)) {
+                throw new Exception(MISSING_DETAILS, true);
+            }
+
+            // $this->db->select('*');
+            // $this->db->from($this->Table->ay);
+            // $this->db->where('Start_year', $this->Start_year);
+
+            // $query = $this->db->get()->result();
+            // if (!empty($query)) {
+            //     return (array('message'=>DUPLICATE_RECORD, 'has_error'=>true));
+            // }
+
+            $data = array(
+                'CurriculumID' => $this->CurriculumID,
                 'Year_level' => $this->Year_level,
                 'Term' => $this->Term,
                 'SubjectID' => $this->SubjectID,
@@ -64,7 +103,7 @@ class Curriculum_services_model extends CI_Model
 
             $this->db->trans_start();
             
-            $this->db->insert($this->Table->curriculum, $data);
+            $this->db->insert($this->Table->currsubj, $data);
 
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {
