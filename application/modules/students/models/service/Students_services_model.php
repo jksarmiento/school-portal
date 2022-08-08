@@ -1,8 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Category_model extends CI_Model
+class Students_services_model extends CI_Model
 {
+    public $ID;
     public $Table;
+
     public function __construct()
     {
         parent::__construct();

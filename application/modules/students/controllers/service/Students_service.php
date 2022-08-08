@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Category extends MY_Controller
+class Students_service extends MY_Controller
 {
 	private $data = [];
 	protected $session;
@@ -15,16 +15,8 @@ class Category extends MY_Controller
 		// }
 
 		$model_list = [
-			'category/Category_model' => 'cModel',
+			'students/service/Students_services_model' => 'sModel',
 		];
 		$this->load->model($model_list);
-	}
-
-	/** load main page */
-	public function index()
-	{
-		$this->data['session'] =  $this->session;
-		$this->data['content'] = 'index';
-		$this->load->view('layout', $this->data);
 	}
 }

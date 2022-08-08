@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 main_header(['user']);
 ?>
 <!-- ############ PAGE START-->
@@ -36,4 +36,4 @@ main_header(['user']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/category/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/category/index.js"></script> -->
