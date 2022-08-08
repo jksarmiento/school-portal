@@ -23,10 +23,76 @@ main_header(['department']);
 								<input type="text" class="form-control" id="Department" placeholder="Enter Department Name">
 								<br>
 								<label for="select_college">College</label>
-								<select class="form-control" id="select_college"></select>
+								<select class="form-control" id="CollegeID">
+									<?php
+								    if(!empty($college)){ 
+								            ?>
+								            <option>Select College</option>
+								            <?php
+								            foreach ($college as $key => $value){
+								                ?>
+								                <option value="<?=@$value->ID?>"><?=@$value->College?></option>
+								                <?php
+								            }    
+								    }else{
+								        ?>
+								        <option>No College Available</option>
+								        <?php
+								    }
+								?>
+								</select>
 							</div>
 						</form>
 						<button type="submit" class="btn btn-primary" id="department_save">Submit</button>
+					</div>
+
+					<div class="col-sm-8">
+						<table class="table border-in-table table-hover table-sm">
+							<thead>
+								<tr>
+									<th style="width: 5%;">#</th>
+									<th style="width: 25%;">DEPARTMENT</th>
+									<th style="width: 25%;">COLLEGE</th>
+									<th style="width: 25%;">DATE CREATED</th>
+									<th>OPTIONS</th>
+								</tr>
+							</thead>
+							<h5>List of Department<h5>
+						<div class="input-group" style="width:250px; position: absolute; right:0px; top:0px; margin-right:12px;">
+								<input type="text" class="form-control form-control-sm" id="search_text" data-field="Search" placeholder="Search Category name">
+								<span class="input-group-btn">
+									<button class="btn btn-sm btn-success" id="search" type="button"><i class="fa fa-search"></i></button>
+								</span>
+						</div>
+						<tbody>
+							<?php
+							if(!empty($department)){ 
+						        foreach ($department as $key => $value) {
+						            ?>
+						                <tr>
+						                    <td><?=(@$key+1)?></td>
+						                    <td><?=@$value->Department?></td>
+						                    <td><?=@$value->College?></td>
+						                    <td><?=date("M d, Y", strtotime(@$value->Date_created))?></td>
+						                    <td>
+						                        <button class="btn btn-danger btn-sm delete" data-id="<?=@$value->ID?>"><i class="fa fa-trash"></i></button>
+						                        <a class="btn btn-sm btn-primary" href="<?php echo base_url()?>category/category_profile/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
+						                        <!-- <button type="submit" class="btn btn-sm btn-primary" id="edit" value="<?=@$value->ID?>" data-toggle="modal"><i class="fa fa-pencil"></i></button> -->
+						                    </td>
+						                </tr>
+						            <?php  
+						        }        
+						    }else{
+						        ?>
+						            <tr>
+						                <td colspan="8">
+						                    <div><center><h6 style="color:red">No Data Found.</h6></center></div>
+						                </td>
+						            </tr>
+						        <?php 
+						    }
+						    ?>
+						</tbody>
 					</div>
 				</div>
 			</div>

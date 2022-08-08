@@ -23,14 +23,10 @@ class Department extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['department'] = $this->dModel->get_department();
+		$this->data['college'] = $this->dModel->get_college();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
-	}
-
-	public function get_college(){
-		$this->data['details'] = $this->dModel->get_college();
-		$this->data['content'] = 'grid/select_college';
-		$this->load->view('layout',$this->data);
 	}
 }
