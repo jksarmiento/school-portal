@@ -1,12 +1,12 @@
 <?php
-main_header(['category']);
+main_header(['students']);
 ?>
 <!-- ############ PAGE START-->
 <div class="padding">
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> ADD CATEGORY </p>
+				<p class="m-b-0 _400"><i class="fa fa-book"></i> STUDENTS INFO </p>
 			</div>
 		</div>
 	</div>
@@ -16,11 +16,33 @@ main_header(['category']);
 			<div class="b-b nav-active-bg">
 				<div class="row">
 					<div class="col-sm-4">
-						<h2>Add Category</h2>
+						<!-- <h2>Add Category</h2> -->
 						<form>
 							<div class="form-group">
-								<label for="category_name">Category Name</label>
-								<input type="text" class="form-control" id="category_name" placeholder="Enter Category Name">
+								<select id="" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
+									<option value=""> -- School ID -- </option>
+								</select>
+								
+								<label for="Fname">First Name</label>
+								<input type="text" class="form-control" id="Fname" placeholder="Enter First Name">
+
+								<label for="Mname">Middle Name</label>
+								<input type="text" class="form-control" id="Mname" placeholder="Enter Middle Name">
+
+								<label for="Lname">Last Name</label>
+								<input type="text" class="form-control" id="Lname" placeholder="Enter Last Name">
+
+								<label for="Birthday">Birthday</label>
+								<input type="date" class="form-control" id="Birthday" placeholder="Enter Birthdate">
+
+								<label for="Address">Address</label>
+								<input type="text" class="form-control" id="Address" placeholder="Enter Address">
+
+								<label for="City">City</label>
+								<input type="text" class="form-control" id="City" placeholder="Enter City">
+
+								<label for="Province">Provice</label>
+								<input type="text" class="form-control" id="Province" placeholder="Enter Province">
 							</div>
 						</form>
 						<button type="submit" class="btn btn-primary" id="category_save">Submit</button>

@@ -82,13 +82,13 @@ function main_header($sidebar = [])
                   <small class="text-muted"><?= SYSTEM_MODULE?></small>
                 </li>
 
-                <li class='<?= (sidebar($sidebar, ['category'])) ? 'active' : '' ?>'>
-                  <a href="<?= base_url() ?>category">
+                <li class='<?= (sidebar($sidebar, ['students'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>students">
                     <span class="nav-icon">
                       <i class="fa fa-book">
                       </i>
                     </span>
-                    <span class="nav-text"> Categories </span>
+                    <span class="nav-text"> STUDENTS </span>
                   </a>
                 </li>
 
