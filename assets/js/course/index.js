@@ -1,15 +1,6 @@
 $(document).ready(function () {
 });
 
-var load_department = () => {
-    var cour_ID = $('#ID').val();
-    $(document).gmLoadPage({
-       url: baseUrl + 'course/get_department?ID=' + cour_ID,
-       load_on: '#select_department'
-   });
-}
-
-load_department();
 $(document).ready(function () {
     $(document).on('click', '#course_save', function () {
             $.confirm({
@@ -36,7 +27,7 @@ $(document).ready(function () {
                                 data: {
                                     Course_name: $('#Course_name').val(),
                                     Course_code: $('#Course_code').val(),
-                                    DeptID: $('#select_department').val(),
+                                    DeptID: $('#DeptID').val(),
                                 },
                                 field: 'field',
                                 function_call: true,
