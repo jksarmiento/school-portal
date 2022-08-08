@@ -7,7 +7,7 @@ $(document).ready(function () {
                 containerFluid: true,
                 columnClass: 'col-md-5 offset-md-4',
                 title: '',
-                content: 'Save Students?',
+                content: 'Save Student?',
                 theme: 'modern',
                 closeIcon: true,
                 animation: 'scale',
@@ -25,7 +25,14 @@ $(document).ready(function () {
                                 url: 'students/service/Students_service/students_save',
                                 selector: '.form-control',
                                 data: {
-                                    Category_name: $('#students_name').val(),
+                                    SchoolID: $('#SchoolID').val(),
+                                    Fname: $('#Fname').val(),
+                                    Mname: $('#Mname').val(),
+                                    Lname: $('#Lname').val(),
+                                    Birthday: $('#Birthday').val(),
+                                    Address: $('#Address').val(),
+                                    City: $('#City').val(),
+                                    Province: $('#Province').val(),
                                 },
                                 field: 'field',
                                 function_call: true,
@@ -43,9 +50,9 @@ $(document).ready(function () {
                                     parameter: true,
                                 }]
                             });
-                            setTimeout(function(){
-                                window.location.reload();
-                            }, 2000);
+                            // setTimeout(function(){
+                            //     window.location.reload();
+                            // }, 2000);
                         }
                     },
                     cancel: {
@@ -131,7 +138,7 @@ $(document).ready(function () {
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
-                                Category_name : $('#students_name').val(),
+                                
                             },
                             field: 'field',
                             function_call: true,
