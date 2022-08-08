@@ -168,6 +168,15 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Curriculum </span>
                   </a>
                 </li>
+                <li class='<?= (sidebar($sidebar, ['studcurr'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>studcurr">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Student Curriculum </span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
