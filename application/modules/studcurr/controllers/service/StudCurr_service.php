@@ -19,4 +19,12 @@ class StudCurr_service extends MY_Controller
 		];
 		$this->load->model($model_list);
 	}
+
+	public function studcurr_save() {
+		$this->ssModel->StudentID = $this->input->post("StudentID");
+		$this->ssModel->CurriculumID = $this->input->post("CurriculumID");
+
+		$response = $this->ssModel->studcurr_save();
+		echo json_encode($response);
+	}
 }

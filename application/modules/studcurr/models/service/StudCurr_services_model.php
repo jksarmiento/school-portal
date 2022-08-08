@@ -18,4 +18,38 @@ class StudCurr_services_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function studcurr_save() {
+        try {
+            if(empty($this->StudentID) || empty($this->CurriculumID) ||
+               $this->StudentID == 0 || $this->CurriculumID == 0) {
+                throw new Exception(MISSING_DETAILS, true);
+            }
+
+            $data = array(
+                'StudentID' => $this->StudentID,
+                'CurriculumID' => $this->CurriculumID,
+                'Date_assigned' => date('Y-m-d H:i:s'),
+                'Active' => true,
+                'Date_created' => date('Y-m-d H:i:s'),
+            );
+
+            $this->db->trans_start();
+            
+            $this->db->insert($this->Table->studcurr, $data);
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);
+            }
+            else {
+                $this->db->trans_commit();
+                return array('message'=>SAVED_SUCCESSFUL, 'has_error'=>false);
+            }
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
 }

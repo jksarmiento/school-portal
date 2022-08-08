@@ -23,6 +23,9 @@ main_header(['studcurr']);
 								<select class="form-control" id="student">
 									<?php
 									if (!empty($students)) {
+										?>
+										<option value="0">Select Student</option>
+										<?php
 										foreach ($students as $key => $value) {
 										?>
 											<option value="<?=$value->ID?>"><?=$value->Lname?>, <?=$value->Fname?> <?=$value->Mname?></option>
@@ -37,6 +40,9 @@ main_header(['studcurr']);
 								<select class="form-control" id="curriculum">
 									<?php
 									if (!empty($curriculum)) {
+										?>
+										<option value="0">Select Curriculum</option>
+										<?php
 										foreach ($curriculum as $key => $value) {
 										?>
 											<option value="<?=$value->ID?>"><?=$value->Curriculum_name?></option>
@@ -47,7 +53,7 @@ main_header(['studcurr']);
 								</select>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary" id="term_save">Submit</button>
+						<button type="submit" class="btn btn-primary" id="studcurr_save">Submit</button>
 					</div>
 				</div>
 			</div>
@@ -58,4 +64,4 @@ main_header(['studcurr']);
 <?php
 main_footer();
 ?>
-<script src="<?php echo base_url() ?>/assets/js/term/index.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/studcurr/index.js"></script>
