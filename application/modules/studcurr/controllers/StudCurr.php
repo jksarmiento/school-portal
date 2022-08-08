@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Term_service extends MY_Controller
+class StudCurr extends MY_Controller
 {
 	private $data = [];
 	protected $session;
@@ -15,16 +15,18 @@ class Term_service extends MY_Controller
 		// }
 
 		$model_list = [
-			'term/service/Term_services_model' => 'tsModel',
+			'studcurr/StudCurr_model' => 'sModel',
 		];
 		$this->load->model($model_list);
 	}
 
-	public function term_save() {
-		$this->tsModel->AYID = $this->input->post("AYID");
-		$this->tsModel->Term = $this->input->post("Term");
-
-		$response = $this->tsModel->term_save();
-		echo json_encode($response);
+	/** load main page */
+	public function index()
+	{
+		$this->data['students'] = $this->sModel->get_students();
+		$this->data['curriculum'] = $this->sModel->get_curriculums();
+		$this->data['session'] =  $this->session;
+		$this->data['content'] = 'index';
+		$this->load->view('layout', $this->data);
 	}
 }
