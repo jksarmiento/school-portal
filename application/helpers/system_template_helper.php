@@ -92,6 +92,16 @@ function main_header($sidebar = [])
                   </a>
                 </li>
 
+                <li class='<?= (sidebar($sidebar, ['studeducstatus'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>studeducstatus">
+                    <span class="nav-icon">
+                      <i class="fa fa-book">
+                      </i>
+                    </span>
+                    <span class="nav-text"> EDUCATION STATUS </span>
+                  </a>
+                </li>
+
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">ADMIN</small>
                 </li>
