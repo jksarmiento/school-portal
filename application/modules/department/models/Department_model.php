@@ -24,4 +24,16 @@ class Department_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_department(){
+        $this->db->select(
+            'd.*,'.
+            'c.College AS College'
+        );
+        $this->db->from($this->Table->department. ' d');
+        $this->db->join($this->Table->college. ' c', 'c.ID = d.CollegeID', 'left');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }
