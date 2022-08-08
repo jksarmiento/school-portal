@@ -57,9 +57,9 @@ main_header(['department']);
 									<th>OPTIONS</th>
 								</tr>
 							</thead>
-							<h5>List of Department<h5>
+							<h5>List of Departments<h5>
 						<div class="input-group" style="width:250px; position: absolute; right:0px; top:0px; margin-right:12px;">
-								<input type="text" class="form-control form-control-sm" id="search_text" data-field="Search" placeholder="Search Category name">
+								<input type="text" class="form-control form-control-sm" id="search_text" data-field="Search" placeholder="Search Department name">
 								<span class="input-group-btn">
 									<button class="btn btn-sm btn-success" id="search" type="button"><i class="fa fa-search"></i></button>
 								</span>
