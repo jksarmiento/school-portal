@@ -348,7 +348,6 @@ function main_header($sidebar = [])
     <!-- MATERIAL TIME PICKER -->
     <script type="text/javascript" src="<?= base_url() ?>assets/theme/bootstrap-material-datetimepicker/js/moment-with-locales.min.js"></script>
     <script src="<?= base_url() ?>assets/theme/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <script src="<?= base_url() ?>assets/js/socket/index.js"></script>
     <script src="<?= base_url() ?>assets/js/sound.js"></script>
   </body>
 
