@@ -24,4 +24,16 @@ class College_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_college(){
+        $this->db->select(
+            'c.*,'.
+            's.School AS School'
+        );
+        $this->db->from($this->Table->college. ' c');
+        $this->db->join($this->Table->school. ' s', 's.ID = c.SchoolID', 'left');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }
