@@ -39,7 +39,8 @@ main_header(['subject']);
 					</div>
 
 					<div class="col-sm-8">
-						<table class="table border-in-table table-hover table-sm">
+						<div class="table-responsive">
+							<table ui-jp="dataTable" class="table table-striped b-t b-b">
 							<thead>
 								<tr>
 									<th style="width: 5%;">#</th>
@@ -51,44 +52,39 @@ main_header(['subject']);
 									<th>OPTIONS</th>
 								</tr>
 							</thead>
-							<h5>List of Subjects<h5>
-						<div class="input-group" style="width:250px; position: absolute; right:0px; top:0px; margin-right:12px;">
-								<input type="text" class="form-control form-control-sm" id="search_text" data-field="Search" placeholder="Search Subject name">
-								<span class="input-group-btn">
-									<button class="btn btn-sm btn-success" id="search" type="button"><i class="fa fa-search"></i></button>
-								</span>
+								<tbody>
+									<?php
+									if(!empty($subject)){ 
+								        foreach ($subject as $key => $value) {
+								            ?>
+								                <tr>
+								                    <td><?=(@$key+1)?></td>
+								                    <td><?=@$value->Subject_code?></td>
+								                    <td><?=@$value->Subject_name?></td>
+								                    <td><?=@$value->Units?></td>
+								                    <td><?=@$value->Description?></td>
+								                    <td><?=date("M d, Y", strtotime(@$value->Date_created))?></td>
+								                    <td>
+								                        <button class="btn btn-danger btn-sm delete" data-id="<?=@$value->ID?>"><i class="fa fa-trash"></i></button>
+								                        <a class="btn btn-sm btn-primary" href="<?php echo base_url()?>category/category_profile/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
+								                        <!-- <button type="submit" class="btn btn-sm btn-primary" id="edit" value="<?=@$value->ID?>" data-toggle="modal"><i class="fa fa-pencil"></i></button> -->
+								                    </td>
+								                </tr>
+								            <?php  
+								        }        
+								    }else{
+								        ?>
+								            <tr>
+								                <td colspan="8">
+								                    <div><center><h6 style="color:red">No Data Found.</h6></center></div>
+								                </td>
+								            </tr>
+								        <?php 
+								    }
+								    ?>
+								</tbody>
+							</table>
 						</div>
-						<tbody>
-							<?php
-							if(!empty($subject)){ 
-						        foreach ($subject as $key => $value) {
-						            ?>
-						                <tr>
-						                    <td><?=(@$key+1)?></td>
-						                    <td><?=@$value->Subject_code?></td>
-						                    <td><?=@$value->Subject_name?></td>
-						                    <td><?=@$value->Units?></td>
-						                    <td><?=@$value->Description?></td>
-						                    <td><?=date("M d, Y", strtotime(@$value->Date_created))?></td>
-						                    <td>
-						                        <button class="btn btn-danger btn-sm delete" data-id="<?=@$value->ID?>"><i class="fa fa-trash"></i></button>
-						                        <a class="btn btn-sm btn-primary" href="<?php echo base_url()?>category/category_profile/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
-						                        <!-- <button type="submit" class="btn btn-sm btn-primary" id="edit" value="<?=@$value->ID?>" data-toggle="modal"><i class="fa fa-pencil"></i></button> -->
-						                    </td>
-						                </tr>
-						            <?php  
-						        }        
-						    }else{
-						        ?>
-						            <tr>
-						                <td colspan="8">
-						                    <div><center><h6 style="color:red">No Data Found.</h6></center></div>
-						                </td>
-						            </tr>
-						        <?php 
-						    }
-						    ?>
-						</tbody>
 					</div>
 				</div> 
 			</div>
