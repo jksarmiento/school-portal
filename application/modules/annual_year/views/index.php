@@ -6,7 +6,7 @@ main_header(['annual_year']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> ANNUAL YEAR </p>
+				<p class="m-b-0 _400"><i class="far fa-calendar-alt"></i> ANNUAL YEAR </p>
 			</div>
 		</div>
 	</div>

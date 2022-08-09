@@ -58,6 +58,7 @@ $array = array(
     'ay' => 'tblay',
     'term' => 'tblayterm',
     'curriculum' => 'tblcurriculum',
+    'currsubj' => 'tblcurrsubj',
     'studcurr' => 'tblstudcurr',
 );
 define('TABLE', json_encode($array));

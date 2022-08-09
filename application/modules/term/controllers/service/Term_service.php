@@ -15,7 +15,7 @@ class Term_service extends MY_Controller
 		// }
 
 		$model_list = [
-			'term/service/term_services_model' => 'tsModel',
+			'term/service/Term_services_model' => 'tsModel',
 		];
 		$this->load->model($model_list);
 	}

@@ -6,7 +6,7 @@ main_header(['term']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> TERM </p>
+				<p class="m-b-0 _400"><i class="fa fa-calendar-plus-o"></i> TERM </p>
 			</div>
 		</div>
 	</div>

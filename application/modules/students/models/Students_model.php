@@ -1,10 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Category_services_model extends CI_Model
+class Students_model extends CI_Model
 {
-    public $ID;
     public $Table;
-
     public function __construct()
     {
         parent::__construct();
@@ -17,5 +15,13 @@ class Category_services_model extends CI_Model
         $model_list = [];
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
+    }
+
+    public function get_school(){
+        $this->db->select("*");
+        $this->db->from($this->Table->school);
+
+        $query = $this->db->get()->result();
+        return $query;
     }
 }

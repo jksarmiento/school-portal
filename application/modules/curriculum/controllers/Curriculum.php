@@ -33,10 +33,12 @@ class Curriculum extends MY_Controller
 	}
 
 	public function contact_curriculum() {
-		$curr_name = $this->uri->segment(3);
-		$this->cModel->curr_name = $curr_name;
+		$ID = $this->uri->segment(3);
+		$this->cModel->ID = $ID;
 
-		$this->data['curr_name'] = $curr_name;
+		$this->data['subject'] = $this->cModel->get_subjects();
+		$this->data['curr_id'] = $ID;
+		$this->data['curr_name'] = $this->cModel->get_curriculum();
 		$this->data['terms'] = $this->cModel->contact_terms();
 		$this->data['curriculum'] = $this->cModel->contact_curriculum();
 		$this->data['subjects'] = $this->cModel->contact_subjects();

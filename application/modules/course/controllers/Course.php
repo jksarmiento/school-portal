@@ -23,14 +23,10 @@ class Course extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['course'] = $this->cModel->get_course();
+		$this->data['department'] = $this->cModel->get_department();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
-	}
-
-	public function get_department(){
-		$this->data['details'] = $this->cModel->get_department();
-		$this->data['content'] = 'grid/select_department';
-		$this->load->view('layout',$this->data);
 	}
 }

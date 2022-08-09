@@ -23,11 +23,18 @@ class Curriculum_service extends MY_Controller
 	public function curriculum_save() {
 		$this->csModel->CourseID = $this->input->post("CourseID");
 		$this->csModel->AYID = $this->input->post("AYID");
+
+		$response = $this->csModel->curriculum_save();
+		echo json_encode($response);
+	}
+
+	public function curr_subj_save() {
+		$this->csModel->CurriculumID = $this->input->post("CurrID");
 		$this->csModel->Year_level = $this->input->post("Year_level");
 		$this->csModel->Term = $this->input->post("Term");
 		$this->csModel->SubjectID = $this->input->post("SubjectID");
 
-		$response = $this->csModel->curriculum_save();
+		$response = $this->csModel->curr_subj_save();
 		echo json_encode($response);
 	}
 }

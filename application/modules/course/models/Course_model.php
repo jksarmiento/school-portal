@@ -24,4 +24,16 @@ class Course_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_course(){
+        $this->db->select(
+            'c.*,'.
+            'd.Department AS Department'
+        );
+        $this->db->from($this->Table->course. ' c');
+        $this->db->join($this->Table->department. ' d', 'd.ID = c.DeptID', 'left');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }

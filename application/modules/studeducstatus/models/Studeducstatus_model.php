@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Category_model extends CI_Model
+class Studeducstatus_model extends CI_Model
 {
     public $Table;
     public function __construct()
@@ -15,5 +15,21 @@ class Category_model extends CI_Model
         $model_list = [];
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
+    }
+
+    public function get_school(){
+        $this->db->select("*");
+        $this->db->from($this->Table->school);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_students(){
+        $this->db->select("*");
+        $this->db->from($this->Table->students);
+
+        $query = $this->db->get()->result();
+        return $query;
     }
 }

@@ -1,22 +1,13 @@
 $(document).ready(function () {
 });
 
-var load_school = () => {
-    var col_ID = $('#ID').val();
-    $(document).gmLoadPage({
-       url: baseUrl + 'college/get_school?ID=' + col_ID,
-       load_on: '#select_school'
-   });
-}
-
-load_school();
 $(document).ready(function () {
     $(document).on('click', '#college_save', function () {
             $.confirm({
                 containerFluid: true,
                 columnClass: 'col-md-5 offset-md-4',
                 title: '',
-                content: 'Save School Name?',
+                content: 'Save College Name?',
                 theme: 'modern',
                 closeIcon: true,
                 animation: 'scale',
@@ -35,7 +26,7 @@ $(document).ready(function () {
                                 selector: '.form-control',
                                 data: {
                                     College: $('#College').val(),
-                                    SchoolID: $('#select_school').val(),
+                                    SchoolID: $('#SchoolID').val(),
                                 },
                                 field: 'field',
                                 function_call: true,

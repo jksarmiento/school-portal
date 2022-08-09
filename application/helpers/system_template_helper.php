@@ -47,6 +47,9 @@ function main_header($sidebar = [])
     <!-- MATERIAL TIME PICKER -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/theme/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css">
     <link rel="icon" href="<?php echo base_url() ?>assets/images/Logo/dental_logo.png">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
 
@@ -82,13 +85,22 @@ function main_header($sidebar = [])
                   <small class="text-muted"><?= SYSTEM_MODULE?></small>
                 </li>
 
-                <li class='<?= (sidebar($sidebar, ['category'])) ? 'active' : '' ?>'>
-                  <a href="<?= base_url() ?>category">
+                <li class='<?= (sidebar($sidebar, ['students'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>students">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="material-icons" style="font-size:medium">people</i>
+                    </span>
+                    <span class="nav-text"> STUDENTS </span>
+                  </a>
+                </li>
+
+                <li class='<?= (sidebar($sidebar, ['studeducstatus'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>studeducstatus">
+                    <span class="nav-icon">
+                      <i class="glyphicon glyphicon-education">
                       </i>
                     </span>
-                    <span class="nav-text"> Categories </span>
+                    <span class="nav-text"> EDUCATIONAL BACKGROUND </span>
                   </a>
                 </li>
 
@@ -99,7 +111,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['school'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>school">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fas fa-school">
                       </i>
                     </span>
                     <span class="nav-text"> School </span>
@@ -108,7 +120,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['college'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>college">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fas fa-user-graduate">
                       </i>
                     </span>
                     <span class="nav-text"> College </span>
@@ -117,7 +129,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>department">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fas fa-project-diagram">
                       </i>
                     </span>
                     <span class="nav-text"> Department </span>
@@ -126,7 +138,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['course'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>course">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="material-icons" style="font-size: medium;">book
                       </i>
                     </span>
                     <span class="nav-text"> Course </span>
@@ -144,7 +156,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['annual_year'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>annual_year">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="far fa-calendar-alt">
                       </i>
                     </span>
                     <span class="nav-text"> Annual Year </span>
@@ -153,7 +165,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['term'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>term">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fa fa-calendar-plus-o">
                       </i>
                     </span>
                     <span class="nav-text"> Term </span>
@@ -162,10 +174,19 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['curriculum'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>curriculum">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fas fa-book-open">
                       </i>
                     </span>
                     <span class="nav-text"> Curriculum </span>
+                  </a>
+                </li>
+                <li class='<?= (sidebar($sidebar, ['studcurr'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>studcurr">
+                    <span class="nav-icon">
+                      <i class="fas fa-book-reader">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Student Curriculum </span>
                   </a>
                 </li>
               </ul>
@@ -339,7 +360,6 @@ function main_header($sidebar = [])
     <!-- MATERIAL TIME PICKER -->
     <script type="text/javascript" src="<?= base_url() ?>assets/theme/bootstrap-material-datetimepicker/js/moment-with-locales.min.js"></script>
     <script src="<?= base_url() ?>assets/theme/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <script src="<?= base_url() ?>assets/js/socket/index.js"></script>
     <script src="<?= base_url() ?>assets/js/sound.js"></script>
   </body>
 
