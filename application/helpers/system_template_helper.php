@@ -129,7 +129,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['department'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>department">
                     <span class="nav-icon">
-                      <i class="fa fa-book">
+                      <i class="fas fa-project-diagram">
                       </i>
                     </span>
                     <span class="nav-text"> Department </span>

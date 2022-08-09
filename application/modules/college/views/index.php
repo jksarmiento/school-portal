@@ -6,7 +6,7 @@ main_header(['college']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> COLLEGE </p>
+				<p class="m-b-0 _400"><i class="fas fa-user-graduate"></i> COLLEGE </p>
 			</div>
 		</div>
 	</div>

@@ -6,7 +6,7 @@ main_header(['curriculum']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> CURRICULUM </p>
+				<p class="m-b-0 _400"><i class="fas fa-book-open"></i> CURRICULUM </p>
 			</div>
 		</div>
 	</div>
