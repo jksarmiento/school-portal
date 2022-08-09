@@ -158,13 +158,13 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '#category_search', function () {
+    $(document).on('click', '#school_search', function () {
         $(document).gmLoadPage({
-            url: 'category/service/Category_service/category_search',
+            url: 'school/service/School_service/search',
             data: {
-                Search_text: $('#category_search_text').val()
+                Search_text: $('#School_search').val()
             },
-            load_on: '#load_category'
+            load_on: '#index'
         });
     }); 
 });

@@ -48,9 +48,9 @@ main_header(['school']);
 							</thead>
 							<h5>List of Schools<h5>
 						<div class="input-group" style="width:250px; position: absolute; right:0px; top:0px; margin-right:12px;">
-								<input type="text" class="form-control form-control-sm" id="search_text" data-field="Search" placeholder="Search School name">
+								<input type="text" class="form-control form-control-sm" id="School_search" data-field="Search" placeholder="Search School name">
 								<span class="input-group-btn">
-									<button class="btn btn-sm btn-success" id="search" type="button"><i class="fa fa-search"></i></button>
+									<button class="btn btn-sm btn-success" id="school_search" type="button"><i class="fa fa-search"></i></button>
 								</span>
 						</div>
 						<tbody>

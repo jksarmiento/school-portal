@@ -50,4 +50,20 @@ class School_services_model extends CI_Model
             return (array('message'=>$msg->getMessage(), 'has_error'=>true));
         }
     }
+
+    public function search(){
+        try{   
+
+            $this->db->select('*');
+            $this->db->like('School', $this->Search_text);
+            $this->db->from($this->Table->school);
+
+            $query = $this->db->get()->result(); 
+
+            return $query;
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
 }
