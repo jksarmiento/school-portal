@@ -21,7 +21,8 @@ main_header(['department']);
 							<div class="form-group">
 								<label for="Department">Department Name</label>
 								<input type="text" class="form-control" id="Department" placeholder="Enter Department Name">
-								<br>
+							</div>
+							<div class="form-group">
 								<label for="select_college">College</label>
 								<select class="form-control" id="CollegeID">
 									<?php

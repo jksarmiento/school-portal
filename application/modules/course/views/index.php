@@ -21,10 +21,12 @@ main_header(['course']);
 							<div class="form-group">
 								<label for="Course_name">Course Name</label>
 								<input type="text" class="form-control" id="Course_name" placeholder="Enter Course Name">
-								<br>
+							</div>
+							<div class="form-group">
 								<label for="Course_code">Course Code</label>
 								<input type="text" class="form-control" id="Course_code" placeholder="Enter Course Code">
-								<br>
+							</div>
+							<div class="form-group">
 								<label for="select_department">Department</label>
 								<select class="form-control" id="DeptID">
 									<?php

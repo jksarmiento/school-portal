@@ -20,8 +20,9 @@ main_header(['school']);
 						<form>
 							<div class="form-group">
 								<label for="School">School Name</label>
-								<input type="text" class="form-control" id="School" placeholder="Enter School Name"> <br>
-
+								<input type="text" class="form-control" id="School" placeholder="Enter School Name">
+							</div>
+							<div class="form-group">
 								<label for="Level">Level:</label>
 									<select class="form-control" id="Level">
 									  <option value="Pre-School">Pre-School</option>

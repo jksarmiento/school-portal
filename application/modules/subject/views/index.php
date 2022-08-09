@@ -21,13 +21,16 @@ main_header(['subject']);
 							<div class="form-group"> 	
 								<label for="Subject_code">Subject Code</label>
 								<input type="text" class="form-control" id="Subject_code" placeholder="Enter Subject Code">
-								<br>
+							</div>
+							<div class="form-group">
 								<label for="Subject_name">Subject Name</label>
 								<input type="text" class="form-control" id="Subject_name" placeholder="Enter Subject Name">
-								<br>
+							</div>
+							<div class="form-group">
 								<label>Units</label>
 								<input type="number" class="form-control" id="Units" placeholder="Enter Units">
-								<br>
+							</div>
+							<div class="form-group">
 								<label style="font-size: 17px;">Description
 								<textarea class="form-control" rows="2" cols="25" placeholder="This is the default text" id="Description"></textarea>
 							</div>
