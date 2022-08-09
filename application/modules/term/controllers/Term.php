@@ -24,6 +24,7 @@ class Term extends MY_Controller
 	public function index()
 	{
 		$this->data['ay'] = $this->tModel->get_ay();
+		$this->data['term'] = $this->tModel->get_terms();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);

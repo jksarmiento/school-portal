@@ -23,6 +23,7 @@ class Annual_year extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['ay'] = $this->ayModel->get_ay();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
