@@ -16,4 +16,12 @@ class Students_model extends CI_Model
         $this->load->model($model_list);
         $this->Table = json_decode(TABLE);
     }
+
+    public function get_school(){
+        $this->db->select("*");
+        $this->db->from($this->Table->school);
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }

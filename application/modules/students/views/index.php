@@ -6,7 +6,7 @@ main_header(['students']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> STUDENTS INFO </p>
+				<p class="m-b-0 _400"><i class="material-icons" style="font-size:medium">people</i> STUDENTS INFO </p>
 			</div>
 		</div>
 	</div>
@@ -16,38 +16,64 @@ main_header(['students']);
 			<div class="b-b nav-active-bg">
 				<div class="row">
 					<div class="col-sm-4">
-						<!-- <h2>Add Category</h2> -->
 						<form>
 							<div class="form-group">
-								<!-- FOR FUTURE USE OF THE STUDENTS ID DROP FUNCTION --!>
-								<!-- <select id="" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
-									<option value=""> -- School ID -- </option>
-								</select> -->
-								
-								<label for="SchoolID">School ID</label>
-								<input type="number" class="form-control" id="SchoolID" placeholder="Enter SchoolID">
+								<label for="SchoolID">School</label>
+								<select id="SchoolID" class="form-control">
+									<?php
+									if(!empty($school)){
+										?>
+										<option>Select School </option>
+										<?php
+										foreach ($school as $key => $value){
+											?>
+											<option value="<?=@$value->ID?>"><?=@$value->
+												School?></option>
+											<?php
+										}
+									}else{
+										?><option>ID not found</option>
+										<?php
+									}
+									?>
+								</select>
+							</div>
 
+							<div class="form-group">
 								<label for="Fname">First Name</label>
 								<input type="text" class="form-control" id="Fname" placeholder="Enter First Name">
+							</div>
 
+							<div class="form-group">
 								<label for="Mname">Middle Name</label>
 								<input type="text" class="form-control" id="Mname" placeholder="Enter Middle Name">
+							</div>
 
+							<div class="form-group">
 								<label for="Lname">Last Name</label>
 								<input type="text" class="form-control" id="Lname" placeholder="Enter Last Name">
-
+							</div>
+							
+							<div class="form-group">
 								<label for="Birthday">Birthday</label>
 								<input type="date" class="form-control" id="Birthday" placeholder="Enter Birthdate">
+							</div>
 
+							<div class="form-group">
 								<label for="Address">Address</label>
 								<input type="text" class="form-control" id="Address" placeholder="Enter Address">
+							</div>
 
+							<div class="form-group">
 								<label for="City">City</label>
 								<input type="text" class="form-control" id="City" placeholder="Enter City">
+							</div>
 
+							<div class="form-group">
 								<label for="Province">Province</label>
 								<input type="text" class="form-control" id="Province" placeholder="Enter Province">
 							</div>
+
 						</form>
 						<button type="submit" class="btn btn-primary" id="students_save">Submit</button>
 					</div>

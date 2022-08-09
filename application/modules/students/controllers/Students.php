@@ -23,6 +23,7 @@ class Students extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['school'] = $this->sModel->get_school();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
