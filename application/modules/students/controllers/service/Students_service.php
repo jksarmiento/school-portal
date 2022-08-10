@@ -33,4 +33,26 @@ class Students_service extends MY_Controller
 		$response = $this->sModel->students_save();
 		echo json_encode($response);
 	}
+
+	public function delete(){
+		$this->sModel->ID = $this->input->post("ID");
+
+		$response = $this->sModel->delete();
+		echo json_encode($response);
+	}
+
+	public function update(){
+		$this->sModel->ID = $this->input->post("ID");
+		$this->sModel->SchoolID = $this->input->post("SchoolID");
+		$this->sModel->Fname = $this->input->post("Fname");
+		$this->sModel->Mname = $this->input->post("Mname");
+		$this->sModel->Lname = $this->input->post("Lname");
+		$this->sModel->Birthday = $this->input->post("Birthday");
+		$this->sModel->Address = $this->input->post("Address");
+		$this->sModel->City = $this->input->post("City");
+		$this->sModel->Province = $this->input->post("Province");
+
+		$response = $this->sModel->update();
+		echo json_encode($response);
+	}
 }

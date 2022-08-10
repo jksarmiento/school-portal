@@ -50,6 +50,10 @@ function main_header($sidebar = [])
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Kumbh+Sans:wght@100;400&family=Montserrat&family=Raleway:wght@100;400&display=swap" 
+    rel="stylesheet">
 
   </head>
 
@@ -90,7 +94,7 @@ function main_header($sidebar = [])
                     <span class="nav-icon">
                       <i class="material-icons" style="font-size:medium">people</i>
                     </span>
-                    <span class="nav-text"> STUDENTS </span>
+                    <span class="nav-text"> Students </span>
                   </a>
                 </li>
 
@@ -100,7 +104,7 @@ function main_header($sidebar = [])
                       <i class="glyphicon glyphicon-education">
                       </i>
                     </span>
-                    <span class="nav-text"> EDUCATIONAL BACKGROUND </span>
+                    <span class="nav-text"> Educational Background </span>
                   </a>
                 </li>
 

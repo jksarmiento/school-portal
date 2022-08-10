@@ -36,4 +36,14 @@ class College_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function college_profile(){
+        $this->db->select('*');
+        $this->db->from($this->Table->college);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();
+        
+        return $query;
+    }
 }

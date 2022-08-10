@@ -60,7 +60,7 @@ main_header(['school']);
 								                    <td><?=date("M d, Y", strtotime(@$value->Date_created))?></td>
 								                    <td>
 								                        <button class="btn btn-danger btn-sm delete" data-id="<?=@$value->ID?>"><i class="fa fa-trash"></i></button>
-								                        <a class="btn btn-sm btn-primary" href="<?php echo base_url()?>category/category_profile/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
+								                        <a class="btn btn-sm btn-primary" href="<?php echo base_url()?>school/school_profile/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
 								                        <!-- <button type="submit" class="btn btn-sm btn-primary" id="edit" value="<?=@$value->ID?>" data-toggle="modal"><i class="fa fa-pencil"></i></button> -->
 								                    </td>
 								                </tr>

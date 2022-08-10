@@ -56,13 +56,13 @@ $(document).ready(function () {
             });
     }); 
 
-    $(document).on('click', '#category_delete', function () {
+    $(document).on('click', '.delete', function () {
         var id = $(this).data('id');
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Delete Category?',
+            content: 'Delete Course?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
@@ -77,7 +77,7 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_delete',
+                            url: 'course/service/Course_service/delete',
                             selector: '.form-control',
                             data: {
                                 ID: id,

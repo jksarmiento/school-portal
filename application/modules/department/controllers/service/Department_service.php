@@ -27,4 +27,11 @@ class Department_service extends MY_Controller
 		$response = $this->dsModel->save();
 		echo json_encode($response);
 	}
+
+	public function delete(){
+		$this->dsModel->ID = $this->input->post("ID");
+
+		$response = $this->dsModel->delete();
+		echo json_encode($response);
+	} 
 }

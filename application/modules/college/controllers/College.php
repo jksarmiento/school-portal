@@ -30,8 +30,13 @@ class College extends MY_Controller
 		$this->load->view('layout', $this->data);
 	}
 
-	// public function get_school(){
-	// 	$this->data['content'] = 'grid/select_school';
-	// 	$this->load->view('layout',$this->data);
-	// }
+	public function college_profile(){
+		$ID = $this->uri->segment(3);
+		$this->cModel->ID = $ID;
+		
+		$this->data['details'] = $this->cModel->college_profile();
+		$this->data['school'] = $this->cModel->get_school();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout',$this->data);
+	}
 }
