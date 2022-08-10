@@ -24,4 +24,14 @@ class School_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+     public function school_profile(){
+        $this->db->select('*');
+        $this->db->from($this->Table->school);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();
+        
+        return $query;
+    }
 }

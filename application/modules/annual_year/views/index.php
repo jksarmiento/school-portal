@@ -6,7 +6,7 @@ main_header(['annual_year']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> ANNUAL YEAR </p>
+				<p class="m-b-0 _400"><i class="far fa-calendar-alt"></i> ANNUAL YEAR </p>
 			</div>
 		</div>
 	</div>
@@ -28,6 +28,34 @@ main_header(['annual_year']);
 							</div>
 						</form>
 						<button type="submit" class="btn btn-primary" id="ay_save">Submit</button>
+					</div>
+					<div class="col-sm-8">
+						<div class="table-responsive">
+							<table ui-jp="dataTable" class="table table-striped b-t b-b">
+								<thead>
+									<tr>
+										<th style="width:10%">#</th>
+										<th style="width:45%">Start Year</th>
+										<th style="width:45%">End year</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if (!empty($ay)) {
+										foreach ($ay as $key => $value) {
+										?>
+											<tr>
+												<td><?=$key+1?></td>
+												<td><?=$value->Start_year?></td>
+												<td><?=$value->End_year?></td>
+											</tr>
+										<?php
+										}
+									}
+									?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>

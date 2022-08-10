@@ -6,7 +6,7 @@ main_header(['studeducstatus']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> EDUCATION STATUS </p>
+				<p class="m-b-0 _400"><i class="glyphicon glyphicon-education"></i> EDUCATIONAL BACKGROUND </p>
 			</div>
 		</div>
 	</div>
@@ -19,24 +19,57 @@ main_header(['studeducstatus']);
 						<!-- <h2>Add Category</h2> -->
 						<form>
 							<div class="form-group">
-								<!-- FOR FUTURE USE OF THE STUDENTS ID DROP FUNCTION --!>
-								<!-- <select id="" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
-									<option value=""> -- School ID -- </option>
-								</select> -->
-								
-								<label for="SchoolID">School ID</label>
-								<input type="number" class="form-control" id="SchoolID" placeholder="Enter SchoolID">
-
-								<label for="Start_year">Start Year</label>
-								<input type="number" class="form-control" id="Start_year" min="1900" max="2099" value="2010" placeholder="Year Started">
-
-								<label for="End_year">End Year</label>
-								<input type="number" class="form-control" id="End_year" min="1900" max="2099" value="2010" placeholder="Year Ended">
-
-								<label for="StudentID">Student ID</label>
-								<input type="number" class="form-control" id="StudentID" placeholder="Enter Student ID">
-
+								<label for="SchoolID">School</label>
+								<select id="SchoolID" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
+									<?php
+									if(!empty($school)){
+										?>
+										<option> -- Select School -- </option>
+										<?php
+										foreach ($school as $key => $value){
+											?>
+											<option value="<?=@$value->ID?>"><?=@$value->School?></option>
+											<?php
+										}
+									}else{
+										?><option style="color:orange">School not found</option>
+										<?php
+									}
+									?>
+								</select>
 							</div>
+
+							<div class="form-group">
+								<label for="Start_year">Start Year</label>
+								<input type="number" class="form-control" id="Start_year" min="1900" max="2099" value="2000" placeholder="Year Started">
+							</div>
+
+							<div class="form-group">
+								<label for="End_year">End Year</label>
+								<input type="number" class="form-control" id="End_year" min="1900" max="2099" value="2000" placeholder="Year Ended">
+							</div>
+
+							<div class="form-group">
+								<label for="StudentID">Student</label>
+								<select id="StudentID" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
+									<?php
+									if(!empty($students)){
+										?>
+										<option> -- Select Student -- </option>
+										<?php
+										foreach ($students as $key => $value){
+											?>
+											<option value="<?=@$value->ID?>"><?=@$value->Fname?> <?=@$value->Lname?></option>
+											<?php
+										}
+									}else{
+										?><option style="color:orange;">Student not found</option>
+										<?php
+									}
+									?>
+								</select>
+							</div>
+
 						</form>
 						<button type="submit" class="btn btn-primary" id="studeducstatus_save">Submit</button>
 					</div>

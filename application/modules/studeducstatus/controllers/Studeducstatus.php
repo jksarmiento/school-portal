@@ -23,6 +23,8 @@ class Studeducstatus extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		$this->data['school'] = $this->sesModel->get_school();
+		$this->data['students'] = $this->sesModel->get_students();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);

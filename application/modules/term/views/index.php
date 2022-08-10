@@ -6,7 +6,7 @@ main_header(['term']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> TERM </p>
+				<p class="m-b-0 _400"><i class="fa fa-calendar-plus-o"></i> TERM </p>
 			</div>
 		</div>
 	</div>
@@ -38,6 +38,34 @@ main_header(['term']);
 							</div>
 						</form>
 						<button type="submit" class="btn btn-primary" id="term_save">Submit</button>
+					</div>
+					<div class="col-sm-8">
+						<div class="table-responsive">
+							<table ui-jp="dataTable" class="table table-striped b-t b-b">
+								<thead>
+									<tr>
+										<th style="width:10%">#</th>
+										<th style="width:45%">Annual Year</th>
+										<th style="width:45%">Term</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if (!empty($term)) {
+										foreach ($term as $key => $value) {
+										?>
+											<tr>
+												<td><?=$key+1?></td>
+												<td><?=$value->Start_year?> - <?=$value->End_year?></td>
+												<td><?=$value->Term?></td>
+											</tr>
+										<?php
+										}
+									}
+									?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>

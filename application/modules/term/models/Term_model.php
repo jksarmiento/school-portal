@@ -25,4 +25,19 @@ class Term_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_terms() {
+        $this->db->select('
+            t.*,
+            a.Start_year AS Start_year,
+            a.End_year AS End_year
+        ');
+        $this->db->from($this->Table->term. ' t');
+        $this->db->join($this->Table->ay. ' a', 't.AYID = a.ID', 'left');
+        $this->db->order_by('Start_year', 'ASC');
+        $this->db->order_by('Term', 'ASC');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }

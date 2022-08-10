@@ -51,16 +51,50 @@ class School_services_model extends CI_Model
         }
     }
 
-    public function search(){
-        try{   
+    public function delete(){
+        try{     
+            $this->db->trans_start();
+            $this->db->where('ID', $this->ID);  
+            $this->db->delete($this->Table->school);
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE)
+            {                
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);    
+            }else{
+                $this->db->trans_commit();
+                return array('message'=>DELETED_SUCCESSFUL, 'has_error'=>false);
+            }
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
 
-            $this->db->select('*');
-            $this->db->like('School', $this->Search_text);
-            $this->db->from($this->Table->school);
+    public function update(){
+        try{     
+            if(empty($this->School)){
+                throw new Exception(MISSING_DETAILS, true);
+            }      
 
-            $query = $this->db->get()->result(); 
+            $data = array(
+                'School' => $this->School,
+                'Level' => $this->Level,
+            );
 
-            return $query;
+            $this->db->trans_start();
+            $this->db->where('ID', $this->ID);
+            $this->db->update($this->Table->school,$data);    
+            
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE)
+            {                
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);    
+            }else{
+                $this->db->trans_commit();
+                return array('message'=>SAVED_SUCCESSFUL, 'has_error'=>false);
+            }
         }
         catch(Exception$msg){
             return (array('message'=>$msg->getMessage(), 'has_error'=>true));

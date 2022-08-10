@@ -55,13 +55,13 @@ $(document).ready(function () {
             });
     }); 
 
-    $(document).on('click', '#category_delete', function () {
+    $(document).on('click', '.delete', function () {
         var id = $(this).data('id');
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Delete Category?',
+            content: 'Delete School?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
@@ -76,9 +76,9 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_delete',
+                            url: 'school/service/School_service/delete',
                             selector: '.form-control',
-                            data: {
+                            data: { 
                                 ID: id,
                             },
                             field: 'field',
@@ -108,12 +108,12 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#category_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Update Category Details?',
+            content: 'Update School Details?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
@@ -128,11 +128,12 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_update',
+                            url: 'school/service/School_service/update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
-                                Category_name : $('#category_name').val(),
+                                School: $('#School').val(),
+                                Level: $('#Level').val(),
                             },
                             field: 'field',
                             function_call: true,

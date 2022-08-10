@@ -6,7 +6,7 @@ main_header(['curriculum']);
 	<div class="p-a light-blue-700 It box-shadow">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="m-b-0 _400"><i class="fa fa-book"></i> CURRICULUM </p>
+				<p class="m-b-0 _400"><i class="fas fa-book-open"></i> CURRICULUM </p>
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,8 @@ main_header(['curriculum']);
 							<table ui-jp="dataTable" class="table table-striped b-t b-b">
 								<thead>
 									<tr>
-										<th style="width:80%">Curriculum</th>
+										<th style="width:10%">#</th>
+										<th style="width:70%">Curriculum</th>
 										<th style="width:20%">Options</th>
 									</tr>
 								</thead>
@@ -64,6 +65,7 @@ main_header(['curriculum']);
 										foreach ($curriculum as $key => $value) {
 										?>
 											<tr>
+												<td><?=$key+1?></td>
 												<td><?=$value->Curriculum_name?></td>
 												<td>
 													<a class="btn btn-sm btn-primary" href="<?=base_url()?>curriculum/contact_curriculum/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>

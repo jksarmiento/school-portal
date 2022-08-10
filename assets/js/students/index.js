@@ -50,9 +50,9 @@ $(document).ready(function () {
                                     parameter: true,
                                 }]
                             });
-                            // setTimeout(function(){
-                            //     window.location.reload();
-                            // }, 2000);
+                            setTimeout(function(){
+                                window.location.reload();
+                            }, 2000);
                         }
                     },
                     cancel: {
@@ -61,7 +61,7 @@ $(document).ready(function () {
             });
     }); 
 
-    $(document).on('click', '#students_delete', function () {
+    $(document).on('click', '.delete', function () {
         var id = $(this).data('id');
         $.confirm({
             containerFluid: true,
@@ -82,7 +82,7 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'students/service/Students_service/students_delete',
+                            url: 'students/service/Students_service/delete',
                             selector: '.form-control',
                             data: {
                                 ID: id,
@@ -114,7 +114,7 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#students_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
@@ -134,10 +134,18 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'students/service/Students_service/students_update',
+                            url: 'students/service/Students_service/update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
+                                SchoolID: $('#SchoolID').val(),
+                                Fname: $('#Fname').val(),
+                                Mname: $('#Mname').val(),
+                                Lname: $('#Lname').val(),
+                                Birthday: $('#Birthday').val(),
+                                Address: $('#Address').val(),
+                                City: $('#City').val(),
+                                Province: $('#Province').val(),
                                 
                             },
                             field: 'field',
