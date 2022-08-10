@@ -28,11 +28,10 @@ class School_service extends MY_Controller
 		echo json_encode($response);
 	}
 
-	public function search(){
-		$this->ssModel->Search_text = $this->input->post("Search_text");
+	public function delete(){
+		$this->ssModel->ID = $this->input->post("ID");
 
-		$this->data['details'] = $this->ssModel->search();
-		$this->data['content'] = 'index';
-		$this->load->view('layout',$this->data);
-	}
+		$response = $this->ssModel->delete();
+		echo json_encode($response);
+	} 
 }

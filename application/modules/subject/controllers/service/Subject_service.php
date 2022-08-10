@@ -29,4 +29,11 @@ class Subject_service extends MY_Controller
 		$response = $this->ssModel->save();
 		echo json_encode($response);
 	}
+
+	public function delete(){
+		$this->ssModel->ID = $this->input->post("ID");
+
+		$response = $this->ssModel->delete();
+		echo json_encode($response);
+	} 
 }
