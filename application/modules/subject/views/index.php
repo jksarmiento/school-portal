@@ -37,7 +37,6 @@ main_header(['subject']);
 						</form>
 						<button type="submit" class="btn btn-primary" id="subject_save">Submit</button>
 					</div>
-
 					<div class="col-sm-8">
 						<div class="table-responsive">
 							<table ui-jp="dataTable" class="table table-striped b-t b-b">
