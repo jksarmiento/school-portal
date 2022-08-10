@@ -33,5 +33,14 @@ class College_service extends MY_Controller
 
 		$response = $this->csModel->delete();
 		echo json_encode($response);
-	} 
+	}
+
+	public function college_update(){
+		$this->csModel->ID = $this->input->post("ID");
+		$this->csModel->College = $this->input->post("College");
+		$this->csModel->SchoolID = $this->input->post("SchoolID");
+
+		$response = $this->csModel->college_update();
+		echo json_encode($response); 
+	}
 }

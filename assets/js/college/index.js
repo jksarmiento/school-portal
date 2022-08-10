@@ -108,7 +108,7 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#category_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
@@ -128,11 +128,12 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_update',
+                            url: 'college/service/College_service/college_update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
-                                Category_name : $('#category_name').val(),
+                                College       : $('#College').val(),
+                                SchoolID      : $('#SchoolID').val(),
                             },
                             field: 'field',
                             function_call: true,
