@@ -32,7 +32,7 @@ main_header(['studeducstatus']);
 											<?php
 										}
 									}else{
-										?><option>ID not found</option>
+										?><option style="color:orange">School not found</option>
 										<?php
 									}
 									?>
@@ -63,7 +63,7 @@ main_header(['studeducstatus']);
 											<?php
 										}
 									}else{
-										?><option>ID not found</option>
+										?><option style="color:orange;">Student not found</option>
 										<?php
 									}
 									?>

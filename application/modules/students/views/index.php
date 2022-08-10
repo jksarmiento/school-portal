@@ -32,7 +32,7 @@ main_header(['students']);
 											<?php
 										}
 									}else{
-										?><option>ID not found</option>
+										?><option style="color:orange;">School not found</option>
 										<?php
 									}
 									?>
