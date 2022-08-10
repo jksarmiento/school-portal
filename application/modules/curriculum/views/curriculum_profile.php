@@ -29,7 +29,7 @@ main_header(['curriculum']);
 							</div>
 							<div class="form-group">
 								<label for="subject">Subject</label>
-								<select class="form-control" id="subject">
+								<select class="form-control select2" id="subject" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<?php
 									if (!empty($subject)) {
 										foreach ($subject as $key => $value) {
@@ -55,7 +55,7 @@ main_header(['curriculum']);
                                         <h2>Year <?=$term_value->Year_level?> Term <?=$term_value->Term?></h2>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table table-bordered m-a-0">
+                                        <table class="table table-bordered table-striped table-hover m-a-0">
                                             <thead>
                                                 <tr>
                                                     <th style="width:5%">#</th>

@@ -19,8 +19,8 @@ main_header(['studcurr']);
 						<h2>Assign Curriculum</h2>
 						<form>
 							<div class="form-group">
-								<label for="ay">Student</label>
-								<select class="form-control" id="student">
+								<label for="student">Student</label>
+								<select class="form-control select2" id="student" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<?php
 									if (!empty($students)) {
 										?>
@@ -37,7 +37,7 @@ main_header(['studcurr']);
 							</div>
 							<div class="form-group">
 								<label for="ay">Curriculum</label>
-								<select class="form-control" id="curriculum">
+								<select class="form-control select2" id="curriculum" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<?php
 									if (!empty($curriculum)) {
 										?>

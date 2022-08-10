@@ -20,7 +20,7 @@ main_header(['curriculum']);
 						<form>
 							<div class="form-group">
 								<label for="course">Course</label>
-								<select class="form-control" id="course">
+								<select class="form-control select2" id="course" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<?php
 									if (!empty($course)) {
 										foreach ($course as $key => $value) {
@@ -34,7 +34,7 @@ main_header(['curriculum']);
 							</div>
 							<div class="form-group">
 								<label for="ay">Annual Year</label>
-								<select class="form-control" id="ay">
+								<select class="form-control select2" id="ay" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
 									<?php
 									if (!empty($ay)) {
 										foreach ($ay as $key => $value) {
