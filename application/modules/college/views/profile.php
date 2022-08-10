@@ -18,6 +18,7 @@ main_header(['college']);
 					<div class="col-sm-4">
 						<h2>Edit College</h2>
 						<form>
+						<input type="hidden" id="ID" value="<?=@$details->ID?>"></input>
 							<div class="form-group">
 								<label for="College">College Name</label>
 								<input type="text" class="form-control" id="College" value="<?=@$details->College?>" placeholder="Enter College Name">

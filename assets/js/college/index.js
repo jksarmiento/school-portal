@@ -113,7 +113,7 @@ $(document).ready(function () {
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Update Category Details?',
+            content: 'Update College Details?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
