@@ -24,4 +24,25 @@ class Students_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+    
+    public function get_students(){
+        $this->db->select(
+            'c.*,'.
+            's.School AS School'
+        );
+        $this->db->from($this->Table->students. ' c');
+        $this->db->join($this->Table->school. ' s', 's.ID = c.SchoolID', 'left');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function students_profile(){
+        $this->db->select('*');
+        $this->db->from($this->Table->students);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();        
+        return $query;
+    }
 }
