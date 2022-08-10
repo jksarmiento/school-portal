@@ -28,4 +28,13 @@ class School extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function school_profile(){
+		$ID = $this->uri->segment(3);
+		$this->sModel->ID = $ID;
+		
+		$this->data['details'] = $this->sModel->school_profile();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout',$this->data);
+	}
 }

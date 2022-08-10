@@ -34,4 +34,13 @@ class School_service extends MY_Controller
 		$response = $this->ssModel->delete();
 		echo json_encode($response);
 	} 
+
+	public function update(){
+		$this->ssModel->ID = $this->input->post("ID");
+		$this->ssModel->School = $this->input->post("School");
+		$this->ssModel->Level = $this->input->post("Level");
+
+		$response = $this->ssModel->update();
+		echo json_encode($response); 
+	}
 }
