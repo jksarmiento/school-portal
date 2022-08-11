@@ -57,14 +57,8 @@ function unit_permission($condition='', $values=''){
         case 'admin':
             return true;
             break;
-        case 'doctor':
+        case 'student':
             return  true;
-            break;
-        case 'accounting':
-            return true;
-            break;
-        case 'medtech':
-            return true;
             break;
         default:
             return false;

@@ -10,9 +10,9 @@ class Department extends MY_Controller
 		parent::__construct();
 		$this->session = (object)get_userdata(USER);
 
-		// if(is_empty_object($this->session)){
-		// 	redirect(base_url().'login/authentication', 'refresh');
-		// }
+		if(is_empty_object($this->session)){
+			redirect(base_url().'login/authentication', 'refresh');
+		}
 
 		$model_list = [
 			'department/Department_model' => 'dModel',
@@ -23,6 +23,12 @@ class Department extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		if (
+			!check_permission($this->session->User_type, ['admin'])
+		) {
+			redirect(base_url() . 'login', 'refresh');
+		}
+
 		$this->data['department'] = $this->dModel->get_department();
 		$this->data['college'] = $this->dModel->get_college();
 		$this->data['session'] =  $this->session;

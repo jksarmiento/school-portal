@@ -10,9 +10,9 @@ class StudCurr extends MY_Controller
 		parent::__construct();
 		$this->session = (object)get_userdata(USER);
 
-		// if(is_empty_object($this->session)){
-		// 	redirect(base_url().'login/authentication', 'refresh');
-		// }
+		if(is_empty_object($this->session)){
+			redirect(base_url().'login/authentication', 'refresh');
+		}
 
 		$model_list = [
 			'studcurr/StudCurr_model' => 'sModel',
@@ -23,6 +23,12 @@ class StudCurr extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		if (
+			!check_permission($this->session->User_type, ['admin'])
+		) {
+			redirect(base_url() . 'login', 'refresh');
+		}
+
 		$this->data['students'] = $this->sModel->get_students();
 		$this->data['curriculum'] = $this->sModel->get_curriculums();
 		$this->data['studcurr'] = $this->sModel->get_studcurr();

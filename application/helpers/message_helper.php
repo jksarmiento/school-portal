@@ -60,5 +60,6 @@ $array = array(
     'curriculum' => 'tblcurriculum',
     'currsubj' => 'tblcurrsubj',
     'studcurr' => 'tblstudcurr',
+    'user' => 'tblusers',
 );
 define('TABLE', json_encode($array));

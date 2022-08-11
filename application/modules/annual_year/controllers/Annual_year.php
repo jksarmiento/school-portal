@@ -10,9 +10,9 @@ class Annual_year extends MY_Controller
 		parent::__construct();
 		$this->session = (object)get_userdata(USER);
 
-		// if(is_empty_object($this->session)){
-		// 	redirect(base_url().'login/authentication', 'refresh');
-		// }
+		if(is_empty_object($this->session)){
+			redirect(base_url().'login/authentication', 'refresh');
+		}
 
 		$model_list = [
 			'annual_year/Annual_year_model' => 'ayModel',
@@ -23,6 +23,12 @@ class Annual_year extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		if (
+			!check_permission($this->session->User_type, ['admin'])
+		) {
+			redirect(base_url() . 'login', 'refresh');
+		}
+
 		$this->data['ay'] = $this->ayModel->get_ay();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';

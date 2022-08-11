@@ -10,9 +10,9 @@ class Curriculum extends MY_Controller
 		parent::__construct();
 		$this->session = (object)get_userdata(USER);
 
-		// if(is_empty_object($this->session)){
-		// 	redirect(base_url().'login/authentication', 'refresh');
-		// }
+		if(is_empty_object($this->session)){
+			redirect(base_url().'login/authentication', 'refresh');
+		}
 
 		$model_list = [
 			'curriculum/Curriculum_model' => 'cModel',
@@ -23,6 +23,12 @@ class Curriculum extends MY_Controller
 	/** load main page */
 	public function index()
 	{
+		if (
+			!check_permission($this->session->User_type, ['admin'])
+		) {
+			redirect(base_url() . 'login', 'refresh');
+		}
+
 		$this->data['course'] = $this->cModel->get_courses();
 		$this->data['ay'] = $this->cModel->get_ay();
 		$this->data['subject'] = $this->cModel->get_subjects();

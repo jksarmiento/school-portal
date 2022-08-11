@@ -89,6 +89,7 @@ function main_header($sidebar = [])
                   <small><?= SYSTEM_MODULE?></small>
                 </li>
 
+                <?php if (check_permission($session->User_type, ['student'])) : ?>
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">STUDENT</small>
                 </li>
@@ -111,7 +112,9 @@ function main_header($sidebar = [])
                     <span class="nav-text"> Educational Background </span>
                   </a>
                 </li>
+                <?php endif; ?>
 
+                <?php if (check_permission($session->User_type, ['admin'])) : ?>
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">ADMIN</small>
                 </li>
@@ -195,6 +198,21 @@ function main_header($sidebar = [])
                       </i>
                     </span>
                     <span class="nav-text"> Student Curriculum </span>
+                  </a>
+                </li>
+                <?php endif; ?>
+
+                <li class="nav-header hidden-folded">
+                  <small class="text-muted">USER</small>
+                </li>
+
+                <li class='<?= (sidebar($sidebar, ['user'])) ? 'active' : '' ?>'>
+                  <a href="<?= base_url() ?>user">
+                    <span class="nav-icon">
+                      <i class="fas fa-book-reader">
+                      </i>
+                    </span>
+                    <span class="nav-text"> Users </span>
                   </a>
                 </li>
               </ul>

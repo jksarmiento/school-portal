@@ -12,7 +12,7 @@ $(document).ready(function () {
                 if (response.has_error) {
                     alert(response.error_message);
                 } else {
-                    window.location = base_url + "landing_page";
+                    window.location = base_url + "user";
                 }
             }
         });

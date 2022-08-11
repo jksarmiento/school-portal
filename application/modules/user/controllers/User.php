@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class School extends MY_Controller
+class User extends MY_Controller
 {
 	private $data = [];
 	protected $session;
@@ -15,7 +15,7 @@ class School extends MY_Controller
 		}
 
 		$model_list = [
-			'school/School_model' => 'sModel',
+			'user/User_model' => 'uModel',
 		];
 		$this->load->model($model_list);
 	}
@@ -24,23 +24,14 @@ class School extends MY_Controller
 	public function index()
 	{
 		if (
-			!check_permission($this->session->User_type, ['admin'])
+			!check_permission($this->session->User_type, ['admin']) &&
+			!check_permission($this->session->User_type, ['student'])
 		) {
 			redirect(base_url() . 'login', 'refresh');
 		}
 
-		$this->data['details'] = $this->sModel->get_school();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
-	}
-
-	public function school_profile(){
-		$ID = $this->uri->segment(3);
-		$this->sModel->ID = $ID;
-		
-		$this->data['details'] = $this->sModel->school_profile();
-		$this->data['content'] = 'profile';
-		$this->load->view('layout',$this->data);
 	}
 }
