@@ -86,7 +86,11 @@ function main_header($sidebar = [])
 
               <ul class="nav" ui-nav>
                 <li class="nav-header hidden-folded">
-                  <small class="text-muted"><?= SYSTEM_MODULE?></small>
+                  <small><?= SYSTEM_MODULE?></small>
+                </li>
+
+                <li class="nav-header hidden-folded">
+                  <small class="text-muted">STUDENT</small>
                 </li>
 
                 <li class='<?= (sidebar($sidebar, ['students'])) ? 'active' : '' ?>'>
