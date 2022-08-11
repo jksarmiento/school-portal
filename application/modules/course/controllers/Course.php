@@ -29,4 +29,14 @@ class Course extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function course_profile(){
+		$ID = $this->uri->segment(3);
+		$this->cModel->ID = $ID;
+		
+		$this->data['details'] = $this->cModel->course_profile();
+		$this->data['department'] = $this->cModel->get_department();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout',$this->data);
+	}
 }

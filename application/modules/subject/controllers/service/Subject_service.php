@@ -36,4 +36,15 @@ class Subject_service extends MY_Controller
 		$response = $this->ssModel->delete();
 		echo json_encode($response);
 	} 
+
+	public function subject_update(){
+		$this->ssModel->ID = $this->input->post("ID");
+		$this->ssModel->Subject_code = $this->input->post("Subject_code");
+		$this->ssModel->Subject_name = $this->input->post("Subject_name");
+		$this->ssModel->Units = $this->input->post("Units");
+		$this->ssModel->Description = $this->input->post("Description");
+
+		$response = $this->ssModel->subject_update();
+		echo json_encode($response); 
+	}
 }

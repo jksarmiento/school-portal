@@ -36,4 +36,14 @@ class Department_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function department_profile(){
+        $this->db->select('*');
+        $this->db->from($this->Table->department);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();
+        
+        return $query;
+    }
 }

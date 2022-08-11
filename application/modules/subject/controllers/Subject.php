@@ -28,4 +28,13 @@ class Subject extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function subject_profile(){
+		$ID = $this->uri->segment(3);
+		$this->sModel->ID = $ID;
+		
+		$this->data['details'] = $this->sModel->subject_profile();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout',$this->data);
+	}
 }
