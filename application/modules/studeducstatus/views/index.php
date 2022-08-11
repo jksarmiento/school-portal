@@ -16,7 +16,6 @@ main_header(['studeducstatus']);
 			<div class="b-b nav-active-bg">
 				<div class="row">
 					<div class="col-sm-4">
-						<!-- <h2>Add Category</h2> -->
 						<form>
 
 						<div class="form-group">
@@ -74,7 +73,7 @@ main_header(['studeducstatus']);
 						</form>
 						<button type="submit" class="btn btn-primary" id="studeducstatus_save">Submit</button>
 					</div>
-					<<div class="col-sm-8">
+					<div class="col-sm-8">
 						<div class="table-responsive">
 							<table ui-jp="dataTable" class="table table-striped b-t b-b">
 								<thead>

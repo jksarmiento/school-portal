@@ -18,52 +18,11 @@ main_header(['studeducstatus']);
 					<div class="col-sm-4">
 						<form>
 							<input type="hidden" id="ID" value="<?=@$details->ID?>"></input>
-							
-							<!-- <div class="form-group">
-								<label for="StudentID">Student</label>
-								<select id="StudentID" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
-									<?php
-									if(!empty($students)){
-										?>
-										<option> -- Select Student -- </option>
-										<?php
-										foreach ($students as $key => $value){
-											?>
-											<option value="<?=@$value->ID?>"><?=@$value->Fname?> <?=@$value->Lname?></option>
-											<?php
-										}
-									}else{
-										?><option style="color:orange;">Student not found</option>
-										<?php
-									}
-									?>
-								</select>
-							</div> -->
 
 							<div class="form-group">
 								<label for="StudentID">Student</label>
 								<input type="text" id="StudentID" value="<?=@$details->Fname?> <?=@$details->Lname?>" class="form-control" readonly="readonly">
-
-							<!-- <div class="form-group">
-								<label for="SchoolID">School</label>
-								<select id="SchoolID" class="form-control" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
-									<?php
-									if(!empty($school)){
-										?>
-										<option> -- Select School -- </option>
-										<?php
-										foreach ($school as $key => $value){
-											?>
-											<option value="<?=@$value->ID?>"><?=@$value->School?></option>
-											<?php
-										}
-									}else{
-										?><option style="color:orange">School not found</option>
-										<?php
-									}
-									?>
-								</select>
-							</div> -->
+							</div>
 
 							<div class="form-group">
 								<label for="SchoolID">School</label>
