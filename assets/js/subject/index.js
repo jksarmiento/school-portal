@@ -110,12 +110,12 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#category_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Update Category Details?',
+            content: 'Update Subject Details?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
@@ -130,11 +130,14 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_update',
+                            url: 'subject/service/Subject_service/subject_update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
-                                Category_name : $('#category_name').val(),
+                                Subject_code : $('#Subject_code').val(),
+                                Subject_name : $('#Subject_name').val(),
+                                Units : $('#Units').val(),
+                                Description : $('#Description').val(),
                             },
                             field: 'field',
                             function_call: true,

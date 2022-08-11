@@ -34,5 +34,15 @@ class Course_service extends MY_Controller
 
 		$response = $this->csModel->delete();
 		echo json_encode($response);
-	} 
+	}
+
+	public function course_update(){
+		$this->csModel->ID = $this->input->post("ID");
+		$this->csModel->Course_code = $this->input->post("Course_code");
+		$this->csModel->Course_name = $this->input->post("Course_name");
+		$this->csModel->DeptID = $this->input->post("DeptID");
+
+		$response = $this->csModel->course_update();
+		echo json_encode($response); 
+	}
 }

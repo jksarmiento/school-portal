@@ -29,4 +29,14 @@ class Department extends MY_Controller
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function department_profile(){
+		$ID = $this->uri->segment(3);
+		$this->dModel->ID = $ID;
+		
+		$this->data['details'] = $this->dModel->department_profile();
+		$this->data['college'] = $this->dModel->get_college();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout',$this->data);
+	}
 }

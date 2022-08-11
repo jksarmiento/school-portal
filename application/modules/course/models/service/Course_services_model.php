@@ -73,4 +73,37 @@ class Course_services_model extends CI_Model
             return (array('message'=>$msg->getMessage(), 'has_error'=>true));
         }
     }
+
+    public function course_update(){
+        try{     
+            if(empty($this->Course_code) ||
+               empty($this->Course_name) ||
+               empty($this->DeptID)){
+                throw new Exception(MISSING_DETAILS, true);
+            }      
+
+            $data = array(
+                'Course_code' => $this->Course_code,
+                'Course_name' => $this->Course_name,
+                'DeptID' => $this->DeptID,
+            );
+
+            $this->db->trans_start();
+            $this->db->where('ID', $this->ID);
+            $this->db->update($this->Table->course,$data);    
+            
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE)
+            {                
+                $this->db->trans_rollback();
+                throw new Exception(ERROR_PROCESSING, true);    
+            }else{
+                $this->db->trans_commit();
+                return array('message'=>SAVED_SUCCESSFUL, 'has_error'=>false);
+            }
+        }
+        catch(Exception$msg){
+            return (array('message'=>$msg->getMessage(), 'has_error'=>true));
+        }
+    }
 }

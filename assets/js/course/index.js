@@ -109,12 +109,12 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#category_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
             title: '',
-            content: 'Update Category Details?',
+            content: 'Update Course Details?',
             theme: 'modern',
             closeIcon: true,
             animation: 'scale',
@@ -129,11 +129,13 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'category/service/Category_service/category_update',
+                            url: 'course/service/Course_service/course_update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
-                                Category_name : $('#category_name').val(),
+                                Course_name : $('#Course_name').val(),
+                                Course_code : $('#Course_code').val(),
+                                DeptID : $('#DeptID').val(),
                             },
                             field: 'field',
                             function_call: true,

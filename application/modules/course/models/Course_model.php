@@ -36,4 +36,14 @@ class Course_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function course_profile(){
+        $this->db->select('*');
+        $this->db->from($this->Table->course);
+        $this->db->where('ID', $this->ID);
+
+        $query = $this->db->get()->row();
+        
+        return $query;
+    }
 }

@@ -33,5 +33,14 @@ class Department_service extends MY_Controller
 
 		$response = $this->dsModel->delete();
 		echo json_encode($response);
-	} 
+	}
+
+	public function department_update(){
+		$this->dsModel->ID = $this->input->post("ID");
+		$this->dsModel->Department = $this->input->post("Department");
+		$this->dsModel->CollegeID = $this->input->post("CollegeID");
+
+		$response = $this->dsModel->department_update();
+		echo json_encode($response); 
+	}
 }
