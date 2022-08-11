@@ -29,4 +29,24 @@ class Studeducstatus_service extends MY_Controller
 		$response = $this->sesModel->studeducstatus_save();
 		echo json_encode($response);
 	}
+
+	public function delete(){
+		$this->sesModel->ID = $this->input->post("ID");
+
+		$response = $this->sesModel->delete();
+		echo json_encode($response);
+	}
+
+	public function update(){
+		$this->sesModel->ID = $this->input->post("ID");
+		// $this->sesModel->ShoolID = $this->input->post("SchoolID");
+		// $this->sesModel->StudentID = $this->input->post("StudentID");
+		$this->sesModel->Start_year = $this->input->post("Start_year");
+		$this->sesModel->End_year = $this->input->post("End_year");
+		
+
+		$response = $this->sesModel->update();
+		echo json_encode($response);
+	}
+
 }

@@ -57,7 +57,7 @@ $(document).ready(function () {
             });
     }); 
 
-    $(document).on('click', '#studeducstatus_delete', function () {
+    $(document).on('click', '.delete', function () {
         var id = $(this).data('id');
         $.confirm({
             containerFluid: true,
@@ -78,7 +78,7 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'studeducstatus/service/Studeducstatus_service/studeducstatus_delete',
+                            url: 'studeducstatus/service/Studeducstatus_service/delete',
                             selector: '.form-control',
                             data: {
                                 ID: id,
@@ -110,7 +110,7 @@ $(document).ready(function () {
         });
     }); 
 
-    $(document).on('click', '#studeducstatus_edit', function () {
+    $(document).on('click', '#edit', function () {
         $.confirm({
             containerFluid: true,
             columnClass: 'col-md-5 offset-md-4',
@@ -130,10 +130,15 @@ $(document).ready(function () {
                     ],
                     action: function () {
                         $(document).gmPostHandler({
-                            url: 'studeducstatus/service/Studeducstatus_service/studeducstatus_update',
+                            url: 'studeducstatus/service/Studeducstatus_service/update',
                             selector: '.form-control',
                             data: {
                                 ID            : $('#ID').val(),
+                                // SchoolID: $('#SchoolID').val(), 
+                                // StudentID: $('#StudentID').val(),
+                                Start_year: $('#Start_year').val(),
+                                End_year: $('#End_year').val(),
+                               
                                 
                             },
                             field: 'field',

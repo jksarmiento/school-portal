@@ -31,8 +31,21 @@ class Studeducstatus extends MY_Controller
 
 		$this->data['school'] = $this->sesModel->get_school();
 		$this->data['students'] = $this->sesModel->get_students();
+		$this->data['studeducstatus'] = $this->sesModel->get_studeducstatus();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
 	}
+
+	public function studeducstatus_profile(){
+		$ID = $this->uri->segment(3);
+		$this->sesModel->ID = $ID;
+
+		$this->data['details'] = $this->sesModel->studeducstatus_profile();
+		$this->data['school'] = $this->sesModel->get_school();
+		$this->data['students'] = $this->sesModel->get_students();
+		$this->data['content'] = 'profile';
+		$this->load->view('layout', $this->data);
+	}
+
 }
