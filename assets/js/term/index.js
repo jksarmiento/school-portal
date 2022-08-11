@@ -41,9 +41,9 @@ $(document).ready(function () {
                                     parameter: true,
                                 }]
                             });
-                            // setTimeout(function(){
-                            //     window.location.reload();
-                            // }, 2000);
+                            setTimeout(function(){
+                                window.location.reload();
+                            }, 2000);
                         }
                     },
                     cancel: {

@@ -25,8 +25,20 @@ class StudCurr extends MY_Controller
 	{
 		$this->data['students'] = $this->sModel->get_students();
 		$this->data['curriculum'] = $this->sModel->get_curriculums();
+		$this->data['studcurr'] = $this->sModel->get_studcurr();
 		$this->data['session'] =  $this->session;
 		$this->data['content'] = 'index';
 		$this->load->view('layout', $this->data);
+	}
+
+	public function contact_studcurr() {
+		$ID = $this->uri->segment(3);
+		$this->sModel->ID = $ID;
+
+		$this->data['student'] = $this->sModel->get_student();
+		$this->data['curriculum'] = $this->sModel->get_curriculums();
+		$this->data['studcurr'] = $this->sModel->contact_studcurr();
+		$this->data['content'] = 'studcurr_profile';
+		$this->load->view('layout',$this->data);
 	}
 }

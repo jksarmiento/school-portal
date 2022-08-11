@@ -27,4 +27,13 @@ class StudCurr_service extends MY_Controller
 		$response = $this->ssModel->studcurr_save();
 		echo json_encode($response);
 	}
+	
+	public function studcurr_update() {
+		$this->ssModel->ID = $this->input->post("ID");
+		$this->ssModel->StudentID = $this->input->post("StudentID");
+		$this->ssModel->CurriculumID = $this->input->post("CurriculumID");
+
+		$response = $this->ssModel->studcurr_update();
+		echo json_encode($response);
+	}
 }

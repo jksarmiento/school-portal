@@ -55,6 +55,42 @@ main_header(['studcurr']);
 						</form>
 						<button type="submit" class="btn btn-primary" id="studcurr_save">Submit</button>
 					</div>
+					<div class="col-sm-8">
+						<div class="table-responsive">
+							<table ui-jp="dataTable" class="table table-striped b-t b-b">
+								<thead>
+									<tr>
+										<th style="width:10%">#</th>
+										<th style="width:30%">Student Name</th>
+										<th style="width:20%">Curriculum</th>
+										<th style="width:20%">Date Assigned</th>
+										<th style="width:10%">Active</th>
+										<th style="width:10%">Options</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if (!empty($studcurr)) {
+										foreach ($studcurr as $key => $value) {
+										?>
+											<tr>
+												<td><?=$key+1?></td>
+												<td><?=$value->Lname?>, <?=$value->Fname?> <?=$value->Mname?></td>
+												<td><?=$value->Curriculum_name?></td>
+												<td><?=date('M j, Y',strtotime($value->Date_created))?></td>
+												<td><span class="label <?= ($value->Active == 1) ? "success" : "danger" ?>" title="<?=$value->Active?>"><?= ($value->Active == 1) ? "ACTIVE" : "INACTIVE" ?></td>
+												<td>
+													<a class="btn btn-sm btn-primary" href="<?=base_url()?>studcurr/contact_studcurr/<?=@$value->ID?>"><i class="fa fa-pencil"></i></a>
+												</td>
+											</tr>
+										<?php
+										}
+									}
+									?>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
