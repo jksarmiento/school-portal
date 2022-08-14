@@ -32,4 +32,36 @@ class Studeducstatus_model extends CI_Model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function get_studeducstatus(){
+        $this->db->select(
+            'c.*,'.
+            's.School AS School,'.
+            'e.Fname AS Fname,'.
+            'e.Lname AS Lname'
+        );
+        $this->db->from($this->Table->studeducstatus. ' c');
+        $this->db->join($this->Table->school. ' s', 's.ID = c.SchoolID', 'left');
+        $this->db->join($this->Table->students. ' e', 'e.ID = c.StudentID', 'left');
+
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function studeducstatus_profile(){
+        $this->db->select(
+            'c.*,'.
+            's.School AS School,'.
+            'e.Fname AS Fname,'.
+            'e.Lname AS Lname'
+        );
+        $this->db->from($this->Table->studeducstatus. ' c');
+        $this->db->where("c.ID", $this->ID);
+        $this->db->join($this->Table->school. ' s', 's.ID = c.SchoolID', 'left');
+        $this->db->join($this->Table->students. ' e', 'e.ID = c.StudentID', 'left');
+
+        $query = $this->db->get()->row();
+        return $query;
+	}
+
 }
