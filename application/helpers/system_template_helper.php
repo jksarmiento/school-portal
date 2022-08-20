@@ -209,7 +209,7 @@ function main_header($sidebar = [])
                 <li class='<?= (sidebar($sidebar, ['user'])) ? 'active' : '' ?>'>
                   <a href="<?= base_url() ?>user">
                     <span class="nav-icon">
-                      <i class="fas fa-book-reader">
+                      <i class="fas fa-house-user">
                       </i>
                     </span>
                     <span class="nav-text"> Users </span>
